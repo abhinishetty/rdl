@@ -1,0 +1,88 @@
+/* body {
+  padding-top: 70px;
+  font-family: Arial, sans-serif;
+}
+
+/* HERO SECTION */
+/* .hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('images/hero.jpg') center/cover;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* SERVICES */ /*
+.service-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+} */
+/* Divider */
+.social-divider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.social-divider::before,
+.social-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ccc;
+}
+
+.social-divider span {
+  padding: 0 15px;
+  font-weight: 500;
+}
+
+/* Social icons */
+.social-app-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-app-icons a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+/* Brand colors */
+.facebook { background: #1877f2; }
+.instagram { background: #e1306c; }
+.linkedin { background: #0a66c2; }
+.x { background: #000; }
+.youtube { background: #ff0000; }
+
+/* Hover */
+.social-app-icons a:hover {
+  opacity: 0.85;
+}
+

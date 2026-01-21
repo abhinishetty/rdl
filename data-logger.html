@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Intelligent Data Logger | RDL Technologies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{padding-top:90px;font-family:Arial}
+.section-title{font-weight:700;margin-bottom:20px}
+.feature h5{font-weight:600}
+.spec-card{border:1px solid #e5e5e5;border-radius:10px;padding:20px;height:100%}
+.download a{text-decoration:none}
+.full-image {
+    height: 100vh;              /* full screen height */
+    width: 100%;
+    background-size: cover;     /* cover entire screen */
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR (reuse SAME navbar from home page) -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold">RDL</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link">IoT Products</a></li>
+        <li class="nav-item"><a class="nav-link">IoT Solutions</a></li>
+        <li class="nav-item"><a class="nav-link">Case Studies</a></li>
+        <li class="nav-item"><a class="nav-link">More</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- DATA LOGGER VIDEO -->
+<section class="py-5 bg-light">
+  <div class="container">
+
+    <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
+      <iframe
+        src="https://www.youtube.com/embed/do6PU0faohI"
+        title="Industrial Data Logger 4G LTE"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FEATURES (ALTERNATING LAYOUT) -->
+<!-- FEATURES (ALTERNATING LAYOUT) -->
+<section class="py-5">
+  <div class="container">
+
+    <!-- FEATURE 1 -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="images/m.webp"
+             class="img-fluid rounded shadow-sm"
+             alt="Highly Reliable Connectivity">
+      </div>
+      <div class="col-md-6">
+        <h4 class="fw-bold">Highly Reliable Connectivity</h4>
+        <p>
+          Dual SIM & auto link carrier detection and network switching features
+          ensure uninterrupted internet access. Embedded watchdog keeps the
+          device always online.
+        </p>
+      </div>
+    </div>
+
+    <!-- FEATURE 2 -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="images/n.webp"
+             class="img-fluid rounded shadow-sm"
+             alt="No Coding Plug and Play">
+      </div>
+      <div class="col-md-6">
+        <h4 class="fw-bold">No Coding – Plug & Play</h4>
+        <p>
+          The Plug & Play device feature eliminates the need for coding and allows
+          you to quickly connect your device to the most popular IoT public and
+          private platforms.
+        </p>
+      </div>
+    </div>
+
+    <!-- FEATURE 3 -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="images/o.webp"
+             class="img-fluid rounded shadow-sm"
+             alt="Wide Range of Industrial Protocols">
+      </div>
+      <div class="col-md-6">
+        <h4 class="fw-bold">Wide Range of Industrial Protocols</h4>
+        <p>
+          Supports MODBUS RTU, MODBUS TCP, JSON, MQTT, FTP and secure
+          SSL communication for reliable industrial data exchange.
+        </p>
+      </div>
+    </div>
+
+    <!-- FEATURE 4 -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="images/p.webp"
+             class="img-fluid rounded shadow-sm"
+             alt="Industrial Isolated IO">
+      </div>
+      <div class="col-md-6">
+        <h4 class="fw-bold">Industrial Isolated IO</h4>
+        <p>
+          Multiple isolated IO to monitor PLCs, VFDs, motors, servos, valves,
+          energy meters, actuators, relays, encoders, RFID and fingerprint readers,
+          and industrial sensors.
+        </p>
+      </div>
+    </div>
+
+    <!-- FEATURE 5 -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="images/q.webp"
+             class="img-fluid rounded shadow-sm"
+             alt="Alarm and Automated Task">
+      </div>
+      <div class="col-md-6">
+        <h4 class="fw-bold">Alarm & Automated Task</h4>
+        <p>
+          Sends emergency alerts and escalation-level SMS to remote users in
+          real time. Supports automated actions based on defined thresholds.
+        </p>
+      </div>
+    </div>
+
+    <!-- FEATURE 6 -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="images/r.webp"
+             class="img-fluid rounded shadow-sm"
+             alt="Easy Remote Management">
+      </div>
+      <div class="col-md-6">
+        <h4 class="fw-bold">Easy Remote Management</h4>
+        <p>
+          Monitor onsite device health and perform bulk configuration through
+          remote access or remote maintenance solutions.
+        </p>
+      </div>
+    </div>
+
+    <!-- FEATURE 7 -->
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="images/s.webp"
+             class="img-fluid rounded shadow-sm"
+             alt="Industrial Grade Design">
+      </div>
+      <div class="col-md-6">
+        <h4 class="fw-bold">Industrial Grade Design</h4>
+        <p>
+          Designed to withstand industrial noise and harsh environmental
+          conditions with isolated and protected IO and EMC/EMI compliance.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- APPLICATIONS -->
+<section class="py-5 bg-light">
+  <div class="container">
+
+    <div class="row align-items-center">
+
+      <!-- LEFT : APPLICATION LIST -->
+      <div class="col-md-7">
+        <h3 class="fw-bold mb-3">Applications</h3>
+
+        <ul class="text-muted">
+          <li>Production & Process Monitoring</li>
+          <li>Utilities Monitoring</li>
+          <li>Condition Monitoring</li>
+          <li>Environment Monitoring</li>
+          <li>Industrial Smart Grid</li>
+          <li>Leakage Detection</li>
+          <li>Cold Storage Monitoring</li>
+          <li>Water Treatment</li>
+          <li>Generator Monitoring</li>
+          <li>Green House</li>
+          <li>Warning Systems in Case of Calamities</li>
+          <li>Standard SCADA Applications</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT : IMAGE -->
+<div class="col-md-5 text-center">
+  <img
+    src="images/t.webp"
+    class="img-fluid rounded shadow-sm"
+    style="display:block;width:100%;height:auto;"
+    alt="Applications of Intelligent Data Logger">
+</div>
+
+
+    </div>
+
+  </div>
+</section>
+<!-- FULL SCREEN IMAGES -->
+<div>
+
+  <section class="full-image" style="background-image: url('images/a2.webp');"></section>
+  <section class="full-image" style="background-image: url('images/a3.webp');"></section>
+  <section class="full-image" style="background-image: url('images/a4.webp');"></section>
+  <section class="full-image" style="background-image: url('images/a5.webp');"></section>
+  <section class="full-image" style="background-image: url('images/a6.jpg');"></section>
+  <section class="full-image" style="background-image: url('images/a7.jpg');"></section>
+
+</div>
+<!-- OEM & CUSTOM SERVICES -->
+<section class="py-5">
+  <div class="container">
+
+    <!-- OEM & White Label Service -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="images/b1.12781954887214,cg_true"
+             class="img-fluid rounded shadow-sm"
+             alt="OEM & White Label Service">
+      </div>
+      <div class="col-md-6">
+        <h4 class="fw-bold">OEM & White Label Service</h4>
+        <p>
+          RDL OEM (Original Equipment Manufacturer) designs and builds products
+          based on custom specifications and supplies them to other companies
+          for branding and distribution.
+        </p>
+        <p class="mb-0">
+          <strong>OEM Minimum Order Quantity:</strong> 100 – 500 units
+        </p>
+      </div>
+    </div>
+
+    <!-- Custom Solution Development -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="images/b2.webp"
+             class="img-fluid rounded shadow-sm"
+             alt="Custom Solution Development">
+      </div>
+      <div class="col-md-6">
+        <h4 class="fw-bold">Custom Solution Development</h4>
+        <p>
+          Quick adaptability to any customization requirement—structural,
+          functional, or look-and-feel. Seamless transformation across every
+          aspect to tailor standard products and bring your ideas to life.
+        </p>
+      </div>
+    </div>
+
+    <!-- Dynamic Process Support -->
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="images/b3.webp"
+             class="img-fluid rounded shadow-sm"
+             alt="Dynamic Process Support">
+      </div>
+      <div class="col-md-6">
+        <h4 class="fw-bold">Dynamic Process Support</h4>
+        <p>
+          Highly flexible, competitive, and economical solutions supporting
+          a wide range of business domains—ensuring customers receive
+          reliable, scalable, and value-driven outcomes.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="py-5">
+  <div class="container">
+
+    <h3 class="fw-bold mb-4 text-center">Data Loggers</h3>
+
+    <div class="row g-4">
+
+      <!-- LOGGER 1 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="images/b4.webp" class="card-img-top" alt="Industrial Data Logger 4G LTE">
+
+          <div class="card-body">
+            <h6 class="fw-bold">Industrial Data Logger – 4G LTE</h6>
+
+            <!-- SHORT -->
+            <ul class="small text-muted ps-3">
+              <li>12× Isolated Analog Inputs</li>
+              <li>4× Digital Inputs</li>
+              <li>3× Digital Outputs</li>
+              <li>RS485 & Ethernet</li>
+            </ul>
+
+            <!-- FULL -->
+            <div class="collapse" id="spec1">
+              <ul class="small text-muted ps-3">
+                <li>WiFi / 2G / 4G / LTE</li>
+                <li>Multiple Slave ID Support</li>
+                <li>INT / FLOAT / DOUBLE</li>
+                <li>EMC / EMI Compliance</li>
+              </ul>
+            </div>
+
+            <a data-bs-toggle="collapse" href="#spec1" class="fw-semibold text-decoration-none">
+              Show More
+            </a>
+            <a href="data-logger.html" class="fw-semibold ms-3">Know More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOGGER 2 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="images/b5.webp" class="card-img-top" alt="Industrial Data Logger Metal Case">
+
+          <div class="card-body">
+            <h6 class="fw-bold">Industrial Data Logger – Metal Case</h6>
+
+            <ul class="small text-muted ps-3">
+              <li>12× Analog Inputs</li>
+              <li>Dual RS485</li>
+              <li>Ethernet MODBUS</li>
+              <li>USB Interface</li>
+            </ul>
+
+            <div class="collapse" id="spec2">
+              <ul class="small text-muted ps-3">
+                <li>RS232 Communication</li>
+                <li>Dual SIM Support</li>
+                <li>GPS / GNSS</li>
+                <li>16GB SD Card</li>
+                <li>AWS / Azure Ready</li>
+              </ul>
+            </div>
+
+            <a data-bs-toggle="collapse" href="#spec2" class="fw-semibold text-decoration-none">
+              Show More
+            </a>
+            <a href="data-logger.html" class="fw-semibold ms-3">Know More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOGGER 3 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="images/b6.webp" class="card-img-top" alt="Industrial Data Logger Flame Proof">
+
+          <div class="card-body">
+            <h6 class="fw-bold">Industrial Data Logger – Flame Proof</h6>
+
+            <ul class="small text-muted ps-3">
+              <li>Isolated IO</li>
+              <li>Ethernet & RS485</li>
+              <li>Relay Output</li>
+              <li>USB Interface</li>
+            </ul>
+
+            <div class="collapse" id="spec3">
+              <ul class="small text-muted ps-3">
+                <li>16GB Inbuilt Storage</li>
+                <li>Offline CSV Logging</li>
+                <li>Remote Relay Control</li>
+                <li>Configurable Alarms</li>
+                <li>Cloud Compatible</li>
+              </ul>
+            </div>
+
+            <a data-bs-toggle="collapse" href="#spec3" class="fw-semibold text-decoration-none">
+              Show More
+            </a>
+            <a href="data-logger.html" class="fw-semibold ms-3">Know More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOGGER 4 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="images/b7.webp" class="card-img-top" alt="Industrial Data Logger IP65">
+
+          <div class="card-body">
+            <h6 class="fw-bold">Industrial Data Logger – IP65/66</h6>
+
+            <ul class="small text-muted ps-3">
+              <li>IP65/66 Enclosure</li>
+              <li>Harsh Environment Ready</li>
+              <li>RS485 & Ethernet</li>
+              <li>USB Configuration</li>
+            </ul>
+
+            <div class="collapse" id="spec4">
+              <ul class="small text-muted ps-3">
+                <li>WiFi / 4G / LTE</li>
+                <li>MODBUS RTU & TCP</li>
+                <li>Secure SSL</li>
+                <li>Industrial Grade Protection</li>
+              </ul>
+            </div>
+
+            <a data-bs-toggle="collapse" href="#spec4" class="fw-semibold text-decoration-none">
+              Show More
+            </a>
+            <a href="data-logger.html" class="fw-semibold ms-3">Know More</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- PARTNERSHIP PROGRAM -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h3 class="fw-bold mb-3">Partnership Program</h3>
+    <a href="#" class="btn btn-outline-dark">Become a Dealer</a>
+  </div>
+</section>
+
+<img src="images/b8.webp" class="img-fluid w-100" alt="Data Logger Partnership Program">
+<!-- DOWNLOADS -->
+<section class="py-5">
+  <div class="container">
+
+    <h3 class="fw-bold mb-3">Downloads</h3>
+    <p class="fw-semibold">Tutorials on YouTube</p>
+
+    <ul class="list-unstyled">
+      <li class="mb-2">
+        Industrial_Data_Logger_4G LTE_Brochure (PDF)
+        <a href="#" class="ms-2 text-decoration-none">Download</a>
+      </li>
+      <li class="mb-2">
+        DATALOGGER USER MANUAL (PDF)
+        <a href="#" class="ms-2 text-decoration-none">Download</a>
+      </li>
+      <li class="mb-2">
+        CREATING FTP ACCOUNT (PDF)
+        <a href="#" class="ms-2 text-decoration-none">Download</a>
+      </li>
+      <li class="mb-2">
+        JSON PARSING (PDF)
+        <a href="#" class="ms-2 text-decoration-none">Download</a>
+      </li>
+      <li class="mb-2">
+        MQTT Broker SSL Implementation (PDF)
+        <a href="#" class="ms-2 text-decoration-none">Download</a>
+      </li>
+      <li class="mb-4">
+        MQTT_Linux_Bringup_ver1.0 (PDF)
+        <a href="#" class="ms-2 text-decoration-none">Download</a>
+      </li>
+    </ul>
+
+    <h5 class="fw-bold mt-4">SDK and API's</h5>
+    <ul class="list-unstyled">
+      <li>ANDROID MQTT CLIENT (ZIP) <a href="#" class="ms-2">Download</a></li>
+      <li>PHP JSON SDK (ZIP) <a href="#" class="ms-2">Download</a></li>
+      <li>PHP MQTT CLIENT (ZIP) <a href="#" class="ms-2">Download</a></li>
+    </ul>
+
+  </div>
+</section>
+
+
+<!-- SHOP CTA -->
+<section class="py-5 bg-light text-center">
+  <div class="container">
+    <h4 class="fw-bold mb-3">Shop @ researchdesignlab.com</h4>
+    <a href="#" class="btn btn-dark btn-lg">Buy Now</a>
+  </div>
+</section>
+
+
+<!-- CONTACT FORM + INFO -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- CONTACT FORM -->
+      <div class="col-md-6">
+        <h3 class="fw-bold mb-3">Contact Us</h3>
+        <p>We ship worldwide; contact us for your shipping needs.</p>
+
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Email<span class="text-danger">*</span></label>
+            <input type="email" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" rows="4"></textarea>
+          </div>
+
+          <button class="btn btn-dark">Send</button>
+
+          <p class="small text-muted mt-2">
+            This site is protected by reCAPTCHA and the Google
+            <a href="#">Privacy Policy</a> and
+            <a href="#">Terms of Service</a> apply.
+          </p>
+        </form>
+      </div>
+
+      <!-- CONTACT DETAILS -->
+      <div class="col-md-6">
+        <h5 class="fw-bold">Better yet, see us in person!</h5>
+        <p>We love our customers, so feel free to visit during normal business hours.</p>
+
+        <p class="fw-bold mt-3">Message us on WhatsApp</p>
+
+        <p>
+          <strong>RDL Technologies Pvt Ltd</strong><br>
+          4th Floor, Oberle Tower,<br>
+          Balmatta, Mangalore, KA 575002, IN
+        </p>
+
+        <p><strong>Phone:</strong> 098862 71407</p>
+
+        <h6 class="fw-bold mt-4">Reseller & Partner Network</h6>
+        <p>
+          Bengaluru | Mumbai | Nasik | Pune | Coimbatore | Gujarat |
+          Noida | UAE | Dubai | Chennai | USA
+        </p>
+
+        <h6 class="fw-bold mt-4">Hours</h6>
+        <ul class="list-unstyled">
+          <li>Mon – Fri: 09:00 am – 05:00 pm</li>
+          <li>Sat: Closed</li>
+          <li>Sun: Closed</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="py-4 bg-dark text-white text-center">
+  <div class="container">
+    <p class="mb-1">
+      © 2026 RDL Technologies Pvt Ltd – All Rights Reserved.
+    </p>
+    <p class="small">
+      Data Logger IIoT 4.0 | Cloud PLC 4.0 | Energy Management System |
+      Condition Monitoring | Water Balancing System | ShopIndino 4.0
+    </p>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
