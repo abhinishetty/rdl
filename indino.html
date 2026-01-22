@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Indino 4.0 | RDL Technologies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<script>
+  window.addEventListener("scroll", function () {
+    const nav = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+  });
+</script>
+<style>
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #222;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  padding-top: 22px;     /* INCREASED HEIGHT */
+  padding-bottom: 22px;
+  transition: all 0.3s ease;
+}
+
+/* Logo size (default state) */
+.navbar-brand img {
+  height: 56px;          /* Bigger logo initially */
+  transition: all 0.3s ease;
+}
+
+/* Scrolled navbar */
+.navbar.scrolled {
+  padding-top: 8px;      /* SHRINKS ON SCROLL */
+  padding-bottom: 8px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Logo shrink on scroll */
+.navbar.scrolled .navbar-brand img {
+  height: 42px;
+}
+
+    /* NAV OFFSET */
+    .nav-offset {
+      height: 120px;
+    }
+
+
+/* SECTION */
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section-text {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #555;
+  text-align: center;
+}
+
+/* DIVIDER */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 60px 0;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+.section-divider span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+  white-space: nowrap;
+}
+
+/* ICON GRID */
+.icon-box img {
+  width: 180px;
+}
+
+.icon-title {
+  font-size: 26px;
+  font-weight: 800;
+  margin-top: 20px;
+}
+
+.icon-text {
+  font-size: 16px;
+  color: #555;
+}
+
+/* BENEFITS / APPS */
+.list-title {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+ul.custom-list {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #444;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 620px;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .video-wrapper iframe {
+    height: 280px;
+  }
+}
+/* ================= FEATURES ================= */
+.specs h5 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.specs ul {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.specs ul li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Divider reused */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #dcdcdc;
+}
+
+.section-divider span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+  white-space: nowrap;
+}
+/* ================= INDINO PRODUCTS (COMPACT) ================= */
+.indino-products-section {
+  padding: 40px 0;   /* reduced from 90px */
+}
+
+.product-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;  /* reduced */
+}
+
+.product-img {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto 12px;  /* reduced */
+  display: block;
+}
+
+.product-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* Section Divider – compact */
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;  /* reduced from 70px */
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #dcdcdc;
+}
+
+.section-divider span {
+  font-size: 17px;
+  font-weight: 500;
+  color: #222;
+  white-space: nowrap;
+}
+
+/* Reduce gap between rows */
+.indino-products-section .row {
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-title {
+    font-size: 24px;
+  }
+
+  .product-text {
+    font-size: 14.5px;
+  }
+}
+
+/* ================= AUTOMATION SIMPLIFIED ================= */
+.automation-section {
+  padding: 35px 0; /* tight top & bottom */
+}
+
+.automation-title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 28px; /* reduced */
+}
+
+.automation-img {
+  width: 100%;
+  max-width: 540px;
+  margin-bottom: 16px; /* reduced */
+  border-radius: 4px;
+}
+
+.automation-subtitle {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.automation-text {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #444;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .automation-title {
+    font-size: 28px;
+    margin-bottom: 22px;
+  }
+
+  .automation-subtitle {
+    font-size: 22px;
+  }
+}
+/* ================= INDINO INTERFACE ================= */
+.indino-interface-section {
+  padding: 35px 0; /* tight spacing */
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #dcdcdc;
+}
+
+.section-divider span {
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.main-title {
+  font-size: 34px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.block-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.block-text {
+  font-size: 15px;
+  color: #555;
+  margin: 0;
+}
+/* ===== COMMON SECTION STYLES (TIGHT SPACING) ===== */
+.section-tight {
+  padding: 40px 0;
+}
+
+.section-title-center {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* ===== CARD STYLE ===== */
+.info-card {
+  text-align: center;
+}
+
+.info-card img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.info-card h3 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 18px 0 10px;
+}
+
+.info-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+  margin: 0;
+}
+
+/* ===== IDE GRID ===== */
+.ide-card h4 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.ide-card img {
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.ide-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Reduce column vertical gaps */
+.row-tight {
+  row-gap: 40px;
+}
+
+.section {
+  padding: 30px 0; /* minimal top/bottom spacing */
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.section p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.section img {
+  width: 100%;
+  height: auto;
+}
+
+.center-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* CONTACT SECTION */
+.contact-section {
+  padding: 80px 0;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #111;
+}
+
+.contact-form {
+  max-width: 900px;
+}
+
+/* Inputs */
+.contact-input,
+.contact-textarea {
+  background: #f2f2f2;
+  border: none;
+  border-radius: 4px;
+  padding: 18px 20px;
+  font-size: 16px;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  outline: none;
+  box-shadow: none;
+  background: #eee;
+}
+
+/* Checkbox */
+.form-check-label {
+  font-size: 15px;
+  color: #444;
+}
+
+/* Button */
+.contact-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 14px 50px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #000;
+}
+.send-btn {
+  display: inline-block;
+  padding: 14px 50px;
+  border: 1.5px solid #222;
+  border-radius: 40px;
+  background: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.send-btn:hover {
+  background: #000;
+  color: #fff;
+}
+form {
+  margin-bottom: 40px;
+}
+
+.recaptcha-text {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Section divider (same as other sections) */
+.section-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.section-line::before,
+.section-line::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ccc;
+}
+
+.section-line span {
+  margin: 0 20px;
+  font-weight: 500;
+  font-size: 18px;
+  white-space: nowrap;
+}
+/* ================= VISIT SECTION ================= */
+.visit-section {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.visit-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin-bottom: 14px;
+}
+
+.visit-subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 35px;
+}
+
+/* ================= WHATSAPP BUTTON ================= */
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 42px;
+  background-color: #4f6368; /* matches screenshot */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #3f5458;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* WhatsApp icon */
+.whatsapp-icon {
+  width: 18px;
+  height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .visit-title {
+    font-size: 28px;
+  }
+
+  .whatsapp-btn {
+    padding: 14px 30px;
+    font-size: 15px;
+  }
+}
+
+/* ADDRESS SECTION */
+.address-section {
+  padding: 70px 0;
+}
+
+.section-heading {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.address-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.phone-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 18px 0;
+}
+
+.network-title {
+  font-weight: 700;
+  margin-top: 30px;
+}
+
+.network-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* HOURS */
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hours-list li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.hours-list span {
+  display: inline-block;
+  width: 40px;
+  font-weight: 600;
+}
+
+/* FOOTER */
+.site-footer {
+  padding: 25px 0;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+  color: #444;
+}
+
+.powered-by {
+  font-size: 14px;
+}
+/* Links row */
+.footer-links {
+  text-align: center;
+  font-size: 16px;
+}
+
+.footer-links a {
+  margin: 0 14px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+  <div class="container">
+
+    <!-- LOGO -->
+    <img src="images/qt=q_95.webp" class="navbar-logo" alt="RDL Logo">
+
+    <!-- TOGGLER -->
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- NAV LINKS -->
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+
+        <!-- IOT PRODUCTS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            IoT Products
+          </a>
+          <ul class="dropdown-menu">
+           <li>
+  <a class="dropdown-item" href="data-logger.html">
+    Data Logger IIoT 4.0
+  </a>
+</li>
+
+            <a class="dropdown-item" href="cloud.html">Cloud PLC 4.0</a>
+<a class="dropdown-item" href="biometric-authentication.html">
+  Biometric Authentication
+</a>
+
+
+           <li>
+  <a class="dropdown-item" href="hmi.html">HMI & Display Board</a>
+</li>
+
+            <li><a class="dropdown-item" href="rfid.html">RFID Reader</a></li>
+
+            <li><a class="dropdown-item" href="r.html">R-LiFi</a></li>
+            <li><a class="dropdown-item" href="v.html">Vibration Sensor</a></li>
+          </ul>
+        </li>
+
+        <!-- IOT SOLUTIONS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            IoT Solutions
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="mes.html">MES 4.0</a></li>
+            <li><a class="dropdown-item" href="oee.html">OEE Monitoring Solution</a></li>
+            <li><a class="dropdown-item" href="energy.html">Energy Monitoring System</a></li>
+           <li><a class="dropdown-item" href="cond.html">Condition Monitoring</a></li>
+<li><a class="dropdown-item" href="water.html">Water Balancing System</a></li>
+<li><a class="dropdown-item" href="coldd.html">Cold Storage Monitoring</a></li>
+<li><a class="dropdown-item" href="uti.html">Utility Monitoring System</a></li>
+<li><a class="dropdown-item" href="ground.html">Grounding &amp; ESD Safety</a></li>
+<li><a class="dropdown-item" href="andon.html">Andon System</a></li>
+<li><a class="dropdown-item" href="esd.html">ESD IntelliTrack</a></li>
+<li><a class="dropdown-item" href="ai.html">AI Based PPE Monitoring</a></li>
+
+          </ul>
+        </li>
+<li class="nav-item dropdown">
+  <a
+    class="nav-link dropdown-toggle"
+    href="#"
+    id="caseStudiesDropdown"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false">
+    Case Studies
+  </a>
+
+  <ul class="dropdown-menu" aria-labelledby="caseStudiesDropdown">
+    <li>
+      <a class="dropdown-item" href="floor.html">Shop Floor Digitization</a>
+    </li>
+    <li>
+      <a class="dropdown-item" href="asset.html">Asset Condition Monitor</a>
+    </li>
+    <li>
+      <a class="dropdown-item" href="asm.html">Asset Management & Audit</a>
+    </li>
+    <li>
+      <a class="dropdown-item" href="um.html">Energy & Utility Manage</a>
+    </li>
+  </ul>
+</li>
+
+        <!-- MORE -->
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+    More
+  </a>
+
+  <ul class="dropdown-menu dropdown-menu-end">
+
+    <!-- SERVICES -->
+    <li>
+      <span class="dropdown-item ps-4 fw-semibold">Services</span>
+    </li>
+    <li><a class="dropdown-item ps-4" href="technical_support.html">Technical Support</a></li>
+    <li><a class="dropdown-item ps-4" href="consulting.html">Consulting</a></li>
+    <li><a class="dropdown-item ps-4" href="hardware-design.html">Hardware Design</a></li>
+    <li><a class="dropdown-item ps-4" href="software-design.html">Software Design</a></li>
+
+    <li><hr class="dropdown-divider"></li>
+
+  
+
+    <li><hr class="dropdown-divider"></li>
+
+    <!-- OTHER LINKS -->
+    <li><a class="dropdown-item" href="shop.html">Shop</a></li>
+    <li><a class="dropdown-item" href="about.html">About Us</a></li>
+    <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+    <li><a class="dropdown-item" href="indino.html">Indino 4.0</a></li>
+    <li><a class="dropdown-item" href="news.html">News</a></li>
+    <li><a class="dropdown-item" href="part.html">Become a Partner</a></li>
+
+  </ul>
+</li>
+
+
+        <!-- SEARCH ICON -->
+       <li class="nav-item ms-lg-3">
+  <button class="btn nav-link"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSearch"
+          aria-expanded="false">
+    <i class="bi bi-search"></i>
+  </button>
+</li>
+
+
+        <!-- CART ICON -->
+        <li class="nav-item">
+  <button class="btn nav-link"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#cartModal">
+    <i class="bi bi-cart"></i>
+  </button>
+</li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- SEARCH BAR -->
+<div class="collapse bg-white shadow-sm" id="navbarSearch">
+  <div class="container py-3">
+    <input type="text" class="form-control" placeholder="Search products...">
+  </div>
+</div>
+
+
+    <div class="row g-5">
+      <div class="col-md-4 icon-box">
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/ff7eb0f2-8bec-4e2b-a6cf-8ae36227269e.png/:/cr=t:10.97%25,l:0%25,w:100%25,h:76.73%25/rs=w:730,h:730,cg:true">
+        <div class="icon-title">IoT Requirement</div>
+        <div class="icon-text">Define your Solution</div>
+      </div>
+
+      <div class="col-md-4 icon-box">
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/5d155a62-3c85-469c-9344-1a1653d1dd9f.png/:/cr=t:5.36%25,l:5.36%25,w:89.29%25,h:89.29%25/rs=w:730,h:730,cg:true,m">
+        <div class="icon-title">Select Hardware</div>
+        <div class="icon-text">Select Open Hardware Platform</div>
+      </div>
+
+      <div class="col-md-4 icon-box">
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/7baad500-e617-43b4-a984-672458343181.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:730,h:730,cg:true">
+        <div class="icon-title">Build Solution</div>
+        <div class="icon-text">Use familiar OpenSource IDE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ================= VIDEO ================= -->
+<section class="section">
+  <div class="container video-wrapper">
+    <iframe src="https://www.youtube.com/embed/P25yiTeVRBg"
+      title="INDINO 4.0" allowfullscreen></iframe>
+  </div>
+</section>
+<!-- ================= DESCRIPTION ================= -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">
+      THE NEXT GENERATION <span style="font-weight:600">open source controls!</span>
+    </h2>
+
+    <p class="section-text">
+      Indino 4.0 series defines a new way of transforming factories into smart / intelligent
+      factories for efficient and easy remote monitoring operational status such as on/off,
+      pressure and temperature.  
+      <br><br>
+      Indino 4.0 supports industrial protocols like <b>Modbus, MQTT, JSON, RESTful, TCP/UDP,
+      SNMP</b>, enabling seamless monitoring and integration through open source APIs.
+    </p>
+  </div>
+</section>
+<!-- ================= IMAGES ================= -->
+<section class="section">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/2INDINO_3273.jpg/:/rs=w:600,h:300"
+             class="img-fluid rounded">
+      </div>
+      <div class="col-md-6">
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/2INDINO_875.jpg/:/rs=w:600,h:300"
+             class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BENEFITS & APPLICATIONS ================= -->
+<section class="section">
+  <div class="container">
+    <div class="row g-5">
+
+      <div class="col-md-6">
+        <h3 class="list-title">Operational Benefits</h3>
+        <ul class="custom-list">
+          <li>Improved productivity</li>
+          <li>Reduced downtime</li>
+          <li>Maximised asset utilisation</li>
+          <li>Tracking trends for real-time marketing</li>
+          <li>Enhanced situational awareness</li>
+          <li>Sensor-driven decision analytics</li>
+          <li>Instantaneous control in autonomous systems</li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <h3 class="list-title">Applications</h3>
+        <ul class="custom-list">
+          <li>Production & process monitoring</li>
+          <li>Utilities monitoring</li>
+          <li>Condition monitoring</li>
+          <li>Environment monitoring</li>
+          <li>Industrial Smart Grid</li>
+          <li>Leakage detection</li>
+          <li>Cold storage monitoring</li>
+          <li>Water treatment</li>
+          <li>Generator monitoring</li>
+          <li>Standard SCADA applications</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ================= FEATURES ================= -->
+<section class="section">
+  <div class="container px-lg-5 px-3">
+
+    <!-- Divider Title -->
+    <div class="section-divider">
+      <span>Features</span>
+    </div>
+
+    <div class="row align-items-start g-5">
+
+      <!-- LEFT: SPEC LIST -->
+      <div class="col-lg-6">
+        <div class="specs">
+
+          <h5>Processor:</h5>
+          <ul>
+            <li>Tensilica Xtensa 32-bit LX6 microprocessor</li>
+            <li>Clock frequency: up to 240 MHz, up to 600 DMIPS</li>
+            <li>ROM: 448 KB &nbsp; SRAM: 520 KB</li>
+          </ul>
+
+          <h5>Co controller:</h5>
+          <ul>
+            <li>Atmega 2560, 16MHz, FLASH 256KB / STM32*</li>
+          </ul>
+
+          <h5>Digital IO:</h5>
+          <ul>
+            <li>24V 8× Isolated enabled digital input</li>
+            <li>24V 1 Amp 4× Isolated digital output / PWM</li>
+            <li>AC Isolation: 3750 VRMS</li>
+            <li>Contacts supported: DRY / WET</li>
+          </ul>
+
+          <h5>Analog IO:</h5>
+          <ul>
+            <li>0–10V / 4–20mA 4× analog input</li>
+            <li>2/3/4 terminal RTD – 1×</li>
+            <li>2× K-Type thermocouple</li>
+          </ul>
+
+          <h5>Wired Connectivity:</h5>
+          <ul>
+            <li>RS485 MODBUS, RS232 & USB</li>
+            <li>RDL expansion bus</li>
+            <li>Memory: FRAM 25KB, SD Card up to 32GB</li>
+            <li>RTC: Built-in RTC for time-stamped logging</li>
+          </ul>
+
+          <h5>Wireless Connectivity:</h5>
+          <ul>
+            <li>Wi-Fi 802.11 b/g/n/e/i (up to 150 Mbps)</li>
+            <li>Bluetooth v4.2 BLE</li>
+            <li>GPRS / XBee / LoRa</li>
+          </ul>
+
+          <h5>Protocol:</h5>
+          <ul>
+            <li>TCP/IP, UDP, SNMP, MODBUS, FTP</li>
+            <li>RESTful, JSON & MQTT</li>
+          </ul>
+
+          <h5>Security:</h5>
+          <ul>
+            <li>WPA / WPA2, WFA & WAPI</li>
+            <li>Secure boot & flash encryption</li>
+            <li>Cryptography: AES, SHA-2, RSA, ECC, RNG</li>
+          </ul>
+
+          <h5>Power Supply:</h5>
+          <ul>
+            <li>DC 9–30V</li>
+          </ul>
+
+          <h5>Enclosure:</h5>
+          <ul>
+            <li>IP20 • Wall / DIN Rail mounting</li>
+            <li>Dimension: 108 × 41.2 × 20 mm</li>
+          </ul>
+
+        </div>
+      </div>
+
+      <!-- RIGHT: IMAGE -->
+      <div class="col-lg-6 text-center">
+        <img
+          src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/2INDINO_442.jpg/:/rs=w:600,h:300,cg:true"
+          class="img-fluid rounded shadow-sm"
+          alt="Indino Features">
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ================= INDINO 4.0 PRODUCTS ================= -->
+<section class="indino-products-section">
+  <div class="container px-lg-5">
+
+    <!-- Section Divider -->
+    <div class="section-divider">
+      <span>Indino 4.0 Products</span>
+    </div>
+
+    <!-- ROW 1 -->
+    <div class="row text-center g-5">
+
+      <!-- Digital IO -->
+      <div class="col-md-4">
+        <h3 class="product-title">Indino Digital IO</h3>
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/111.png/:/cr=t:21.59%25,l:0%25,w:100%25,h:40%25/rs=w:388,h:194,cg:true/qt=q:17"
+             class="product-img" alt="Indino Digital IO">
+        <p class="product-text">
+          Indino main block which supporting 8x 24v isolated Digital INPUT and
+          4x 24V digital OUTPUT / PWM enabled with WIFI / BLE, RS232, RS485
+          communication and RTC, SDCARD for real time Data stamping.
+        </p>
+      </div>
+
+      <!-- Analog IO -->
+      <div class="col-md-4">
+        <h3 class="product-title">Indino Analog IO</h3>
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/indino%20Analog.png/:/cr=t:25.76%25,l:0%25,w:100%25,h:37.5%25/rs=w:388,h:194,cg:true/qt=q:17"
+             class="product-img" alt="Indino Analog IO">
+        <p class="product-text">
+          Add On Modular blocks for the Indino, for expanding the Analog IO
+          (0-10V / 4-20ma), 1x RTD, 2x Thermocouple and supporting RS232,
+          RS485 and 4x DO / PWM.
+        </p>
+      </div>
+
+      <!-- Ethernet IO -->
+      <div class="col-md-4">
+        <h3 class="product-title">Indino Ethernet IO</h3>
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/2222.png/:/cr=t:22.83%25,l:0%25,w:100%25,h:37.5%25/rs=w:388,h:194,cg:true/qt=q:17"
+             class="product-img" alt="Indino Ethernet IO">
+        <p class="product-text">
+          Add On Modular blocks for the Indino, for expanding the Ethernet IO
+          and supporting 6x 24v isolated Digital INPUT and 5x 24V digital OUTPUT.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="row text-center g-5 mt-5">
+
+      <!-- GPRS IO -->
+      <div class="col-md-4">
+        <h3 class="product-title">Indino GPRS IO</h3>
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/111.png/:/cr=t:22.83%25,l:0%25,w:100%25,h:38.17%25/rs=w:388,h:194,cg:true/qt=q:17"
+             class="product-img" alt="Indino GPRS IO">
+        <p class="product-text">
+          Add On or independent blocks, for expanding the GPRS IO and supporting
+          8x 24v isolated Digital INPUT and 4x 24V digital OUTPUT / PWM enabled
+          with RS232, RS485 communication and RTC, SDCARD for real time Data stamping.
+        </p>
+      </div>
+
+      <!-- XBee IO -->
+      <div class="col-md-4">
+        <h3 class="product-title">Indino Xbee IO</h3>
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/111.png/:/cr=t:22.83%25,l:0%25,w:100%25,h:37.5%25/rs=w:388,h:194,cg:true/qt=q:17"
+             class="product-img" alt="Indino Xbee IO">
+        <p class="product-text">
+          Add On or independent blocks, for expanding the XBee IO and supporting
+          8x 24v isolated Digital INPUT and 4x 24V digital OUTPUT / PWM enabled
+          with RS232, RS485 communication and RTC, SDCARD for real time Data stamping.
+        </p>
+      </div>
+
+      <!-- LoRA IO -->
+      <div class="col-md-4">
+        <h3 class="product-title">Indino LoRA IO</h3>
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/111.png/:/cr=t:23.48%25,l:0%25,w:100%25,h:37.5%25/rs=w:388,h:194,cg:true/qt=q:17"
+             class="product-img" alt="Indino LoRA IO">
+        <p class="product-text">
+          Add On or independent blocks, for expanding the LoRA IO and supporting
+          8x 24v isolated Digital INPUT and 4x 24V digital OUTPUT / PWM enabled
+          with RS232, RS485 communication and RTC, SDCARD for real time Data stamping.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- ================= AUTOMATION SIMPLIFIED ================= -->
+<section class="automation-section">
+  <div class="container px-lg-5">
+
+    <h2 class="automation-title">Automation simplified</h2>
+
+    <div class="row g-4 align-items-start">
+
+      <!-- LEFT CARD -->
+      <div class="col-md-6 text-center">
+        <img
+          src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/2INDINO_065.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,h:300,cg:true/qt=q:17"
+          alt="Automated Machine Fault Alerting System"
+          class="automation-img"
+        >
+
+        <h3 class="automation-subtitle">
+          Automated Machine Fault Alerting System
+        </h3>
+
+        <p class="automation-text">
+          Achieve higher productivity and utilization with Industry 4.0 features
+          of Automated Machine Fault Altering system. Enabled with Preventive
+          Analytics using Machine Learning reduces downtime and improves efficiency.
+          Supports Industry Standard Interfaces sensors and interfaces, protocols.
+          Alerts variety of devices and customizable dashboards.
+        </p>
+      </div>
+
+      <!-- RIGHT CARD -->
+      <div class="col-md-6 text-center">
+        <img
+          src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/f9dc4def-5ae6-4071-b67e-7b2eefb9a8fb.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,h:300,cg:true/qt=q:17"
+          alt="Predictive Condition Monitoring System"
+          class="automation-img"
+        >
+
+        <h3 class="automation-subtitle">
+          Predictive Condition Monitoring System
+        </h3>
+
+        <p class="automation-text">
+          Deep Analytics based system, provide insight into prevailing conditions
+          on the Production Floor. Ingests and process data from multiple sensors
+          to deliver actionable intelligent reports. Enable management of large
+          work force with minimal Technical expertise.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ================= INDINO INTERFACING SECTION ================= -->
+<section class="indino-interface-section">
+  <div class="container px-lg-5">
+
+    <!-- Divider title -->
+    <div class="section-divider">
+      <span>Indino 4.0 interfacing with other computing Families</span>
+    </div>
+
+    <!-- Main image -->
+    <div class="text-center mb-4">
+      <img
+        src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/2INDINO_1483.jpg/:/rs=w:1240,h:620,cg:true,m"
+        class="img-fluid rounded"
+        alt="Indino 4.0 Interfacing Overview">
+    </div>
+
+    <!-- Main heading -->
+    <h2 class="main-title">
+      Interfacing Raspberry pi with Indino 4.0
+    </h2>
+    <p class="subtitle">
+      Also Supporting interface for WiFi / BLE and Ethernet communication
+    </p>
+
+    <!-- Two column blocks -->
+    <div class="row g-4 align-items-start mt-3">
+
+      <!-- Intel NUC -->
+      <div class="col-md-6 text-center">
+        <img
+          src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/2INDINO_2184.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,h:300,cg:true"
+          class="img-fluid rounded mb-3"
+          alt="Interfacing Intel NUC with Indino 4.0">
+
+        <h3 class="block-title">
+          Interfacing Intel NUC with Indino 4.0
+        </h3>
+        <p class="block-text">
+          Also Supporting interface for WiFi / BLE and Ethernet communication
+        </p>
+      </div>
+
+      <!-- BeagleBone -->
+      <div class="col-md-6 text-center">
+        <img
+          src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/2INDINO_2868.jpg/:/rs=w:600,h:300,cg:true,m"
+          class="img-fluid rounded mb-3"
+          alt="Interfacing BeagleBone with Indino 4.0">
+
+        <h3 class="block-title">
+          Interfacing BeagleBone with Indino 4.0
+        </h3>
+        <p class="block-text">
+          Also Supporting interface for WiFi / BLE and Ethernet communication
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="container px-lg-5">
+
+    <h2 class="section-title-center">Automation simplified</h2>
+
+    <div class="row row-tight">
+
+      <!-- LEFT -->
+      <div class="col-md-6 info-card">
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/2INDINO_065.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,h:300,cg:true/qt=q:17"
+             alt="Automated Machine Fault Alerting System">
+
+        <h3>Automated Machine Fault Alerting System</h3>
+
+        <p>
+          Achieve higher productivity and utilization with Industry 4.0 features
+          of Automated Machine Fault Altering system. Enabled with Preventive
+          Analytics using Machine Learning reduces downtime and improves efficiency.
+          Supports Industry Standard Interfaces sensors and interfaces, protocols.
+          Alerts variety of devices and customizable dashboards.
+        </p>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col-md-6 info-card">
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/f9dc4def-5ae6-4071-b67e-7b2eefb9a8fb.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,h:300,cg:true/qt=q:17"
+             alt="Predictive Condition Monitoring System">
+
+        <h3>Predictive Condition Monitoring System</h3>
+
+        <p>
+          Deep Analytics based system, provide insight into prevailing conditions
+          on the Production Floor. Ingests and process data from multiple sensors
+          to deliver actionable intelligent reports. Enable management of large
+          work force with minimal Technical expertise.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="container px-lg-5">
+
+    <h2 class="section-title-center">Open Source Programming IDE</h2>
+
+    <!-- ROW 1 -->
+    <div class="row row-tight">
+
+      <div class="col-md-4 ide-card">
+        <h4>ARDUINO IDE</h4>
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/5f54723b-fb7a-4ec4-9224-18f2af1b91d3.png/:/cr=t:6.98%25,l:0%25,w:100%25,h:40.72%25/rs=w:388,h:194,cg:true/qt=q:17">
+        <p>
+          The open-source Arduino Software (IDE) makes it easy to write code and
+          upload it to the board. It runs on Windows, Mac OS X, and Linux.
+          (www.arduino.cc)
+        </p>
+      </div>
+
+      <div class="col-md-4 ide-card">
+        <h4>ATMEL Studio</h4>
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/7aa32ed7-3aaf-4895-9b2c-7934281f3452.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:388,h:194,cg:true/qt=q:17">
+        <p>
+          Integrated development platform (IDP) for developing and debugging all
+          AVR® and SAM microcontroller applications using C/C++ or Assembly.
+        </p>
+      </div>
+
+      <div class="col-md-4 ide-card">
+        <h4>Arduino Compatible Compiler for LabVIEW</h4>
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/939e13fc-1056-443a-9738-6dd3c7dd1d93.png/:/cr=t:25%25,l:0%25,w:100%25,h:50%25/rs=w:388,h:194,cg:true/qt=q:17">
+        <p>
+          Compiler that takes LabVIEW programs and deploys them to Arduino™
+          compatible targets. (www.tsxperts.com)
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="row row-tight mt-4">
+
+      <div class="col-md-4 ide-card">
+        <h4>ThingSpeak for IoT</h4>
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/5e61561b-2ac4-4bcb-82e5-0f4a729b4288.svg/:/cr=t:0%25,l:0%25,w:83.42%25,h:100%25/rs=w:388,h:194,cg:true/qt=q:17">
+        <p>
+          ThingSpeak™ is an IoT analytics platform from MathWorks® for aggregating,
+          visualizing, and analyzing live IoT data. (thingspeak.com)
+        </p>
+      </div>
+
+      <div class="col-md-4 ide-card">
+        <h4>RDL Plug and Play Configuration Manager</h4>
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/5be10ec8-8017-4c43-a5da-aa4f0d6bd2f6.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:388,h:194,cg:true/qt=q:17">
+        <p>
+          Every datalogger is shipped with Plug & Play Configuration Manager,
+          enabling fast configuration with minimal technical expertise.
+        </p>
+      </div>
+
+      <div class="col-md-4 ide-card">
+        <h4>Soapbox Snap</h4>
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/ba7785c5-6d33-498b-8234-b53c7d23726b.png/:/cr=t:4.4%25,l:0%25,w:100%25,h:54.35%25/rs=w:388,h:194,cg:true/qt=q:17">
+        <p>
+          Open-source PC-based automation platform with ladder logic editor and
+          runtime support. (soapboxautomation.com)
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<section class="section">
+  <div class="container split">
+    
+    <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/2INDINO_2415.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,h:300,cg:true/qt=q:17"
+         alt="OEM Service">
+
+    <div>
+      <h2>OEM & White label Service</h2>
+      <p>
+        RDL OEM (Original Equipment Manufacturer) designs and builds products
+        based on customer specifications and sells them to other companies
+        for branding and distribution.
+      </p>
+      <p><strong>OEM Minimum order quantity:</strong> 100 to 500 no's.</p>
+    </div>
+
+  </div>
+</section>
+<section class="section">
+  <div class="container split">
+
+    <div>
+      <h2>CUSTOM SOLUTION DEVELOPMENT</h2>
+      <p>
+        Quick adaptability to any kind of customization requirements be it
+        structural, functional, or look-and-feel. Seamless transformation is
+        possible to tailor standard products and realize creative imagination.
+      </p>
+    </div>
+
+    <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/2INDINO_1483.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:88.89%25/rs=w:600,h:300,cg:true/qt=q:17"
+         alt="Custom Solution Development">
+
+  </div>
+</section>
+<section class="section">
+  <div class="container split">
+
+    <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/258ad9fb-ac1d-41a4-9c69-40e4330983c1.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,h:300,cg:true/qt=q:17"
+         alt="Dynamic Process Support">
+
+    <div>
+      <h2>Dynamic Process Support</h2>
+      <p>
+        Highly flexible, competitive, and economical solutions encompassing
+        support for a wide variety of business domains where customers receive
+        delightful business outcomes.
+      </p>
+    </div>
+
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h3 class="center-title">Order Information</h3>
+
+    <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/RDL-INDINO-ORDER-INFORMATION-1.png/:/rs=w:1240,h:620,cg:true,m/cr=w:1240,h:620"
+         alt="Order Information Table">
+  </div>
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="contact-section">
+  <div class="container">
+
+    <!-- Section divider -->
+    <div class="section-line">
+      <span>Contact Us</span>
+    </div>
+
+    <h2 class="contact-title">
+      We ship worldwide; contact us for your <br> shipping needs
+    </h2>
+
+    <form class="contact-form mx-auto">
+      <div class="mb-4">
+        <input type="text" class="form-control contact-input" placeholder="Name">
+      </div>
+
+      <div class="mb-4">
+        <input type="email" class="form-control contact-input" placeholder="Email*" required>
+      </div>
+
+      <div class="mb-4">
+        <textarea class="form-control contact-textarea" rows="6" placeholder="Message"></textarea>
+      </div>
+
+      <div class="form-check mb-4">
+        <input class="form-check-input" type="checkbox" id="updates">
+        <label class="form-check-label" for="updates">
+          Sign up for our email list for updates, promotions, and more.
+        </label>
+      </div>
+
+      <div class="text-center mt-4">
+  <button type="submit" class="send-btn">Send</button>
+</div>
+
+
+    </form>
+<p class="recaptcha-text text-center">
+  This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+</p>
+
+  </div>
+</section>
+
+<section class="visit-section text-center">
+  <div class="container">
+
+    <h2 class="visit-title">Better yet, see us in person!</h2>
+
+    <p class="visit-subtitle">
+      We love our customers, so feel free to visit during normal business hours.
+    </p>
+
+    <a href="https://wa.me/919886271407"
+       target="_blank"
+       class="whatsapp-btn">
+
+      <img src="images/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
+      <span>Message us on WhatsApp</span>
+
+    </a>
+
+  </div>
+</section>
+
+
+
+<section class="address-section">
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <!-- LEFT -->
+      <div class="col-md-5 text-center text-md-start">
+        <h3 class="section-heading">RDL Technologies<br>Pvt Ltd</h3>
+
+        <p class="address-text">
+          RDL Technologies PVT LTD, 4th floor,<br>
+          Oberle Tower, Balmatta, Mangalore, KA<br>
+          575002, IN
+        </p>
+
+        <p class="phone-text">098862 71407</p>
+
+        <p class="network-title">Reseller & Partner Network</p>
+        <p class="network-text">
+          Bengaluru | Mumbai | Nasik | Pune |<br>
+          Coimbatore | Gujarat | Noida | UAE | Dubai |<br>
+          Chennai | USA
+        </p>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col-md-4 text-center text-md-start">
+        <h3 class="section-heading">Hours</h3>
+
+        <ul class="hours-list">
+          <li><span>Mon</span> 09:00 am – 05:00 pm</li>
+          <li><span>Tue</span> 09:00 am – 05:00 pm</li>
+          <li><span>Wed</span> 09:00 am – 05:00 pm</li>
+          <li><span>Thu</span> 09:00 am – 05:00 pm</li>
+          <li><span>Fri</span> 09:00 am – 05:00 pm</li>
+          <li><span>Sat</span> Closed</li>
+          <li><span>Sun</span> Closed</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="#">Data Logger IIoT 4.0</a>
+    <a href="#">Cloud PLC 4.0</a>
+    <a href="#">Energy Management System</a>
+    <a href="#">Condition Monitoring</a>
+    <a href="#">Water Balancing System</a>
+    <a href="#">Shop</a>
+    <a href="#">Indino 4.0</a>
+  </div>
+  <div class="container d-flex justify-content-between align-items-center flex-wrap">
+    <p class="copyright">
+      Copyright © 2026 RDL Technologies Pvt Ltd – All Rights Reserved.
+    </p>
+
+    <div class="powered-by">
+      Powered by <strong>GoDaddy Airo</strong>
+    </div>
+  </div>
+  </footer>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
