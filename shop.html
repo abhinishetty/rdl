@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RDL Technologies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+body{padding-top:70px;font-family:Arial}
+.card img{height:200px;object-fit:cover}
+.stats h3{color:#0a2540;font-weight:bold}
+footer{background:#000;color:#fff;padding:20px}
+
+/* Custom white → black button */
+.btn-outline-black {
+  background-color: #fff;
+  color: #000;
+  border: 1.5px solid #000;
+  padding: 8px 22px;              /* makes it oval, not short */
+  border-radius: 50px;            /* bent rectangle / oval */
+  display: inline-flex;
+  align-items: center;            /* vertical center */
+  justify-content: center;        /* horizontal center */
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-black:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.sustain-img {
+  height: 250px;        /* smaller size */
+  width: auto;
+  object-fit: contain;
+}
+/* Remove border from Solutions cards */
+.card {
+  border: none;
+}
+
+.awards-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.awards-track {
+  display: flex;
+  animation: awardsStep 18s steps(5) infinite;
+}
+
+.award-card {
+  flex: 0 0 33.333%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 24px;
+  border-right: 2px solid #ddd;
+}
+
+.award-card:last-child {
+  border-right: none;
+}
+
+.award-img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+.award-card p {
+  text-align: left;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* STEP SLIDE */
+@keyframes awardsStep {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-166.666%);
+  }
+}
+
+.clients-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.clients-track {
+  display: flex;
+  animation: clientsStep 20s steps(7) infinite;
+}
+
+.client {
+  flex: 0 0 calc(100% / 7); /* ALWAYS 7 VISIBLE */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.client img {
+  height: 105px;        /* adjust if needed */
+  width: auto;
+  object-fit: contain;
+}
+
+/* STEP-BASED SLIDE (ONE LOGO AT A TIME) */
+@keyframes clientsStep {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.social-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.social-divider::before,
+.social-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccb7b7;
+}
+
+.social-divider::before {
+  margin-right: 15px;
+}
+
+.social-divider::after {
+  margin-left: 15px;
+}
+
+.social-divider span {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #d3c9c9;
+}
+
+.section-divider::before {
+  margin-right: 15px;
+}
+
+.section-divider::after {
+  margin-left: 15px;
+}
+
+.section-divider span {
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 600;   /* semi-bold */
+}
+
+/* Scrollable dropdown for "More" */
+.navbar .dropdown-menu {
+  max-height: 260px;        /* controls height */
+  overflow-y: auto;        /* vertical scrollbar */
+  min-width: 220px;        /* reduce dropdown width */
+  font-size: 14px;         /* slightly smaller text */
+}
+
+/* Optional: smooth scrollbar (Chrome/Edge) */
+/* Navbar must be sticky */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+}
+
+/* Default logo size */
+.navbar-logo {
+  height: 160px;
+  transition: height 0.3s ease;
+}
+
+/* Scroll-driven animation (NO JS) */
+@supports (animation-timeline: scroll()) {
+
+  .navbar-logo {
+    animation: logoShrink linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0 150px;
+  }
+
+  @keyframes logoShrink {
+    from {
+      height: 110px;
+    }
+    to {
+      height: 70px;
+    }
+  }
+}
+/* Remove default Bootstrap caret */
+.nav-link.dropdown-toggle::after {
+  display: none;
+}
+
+/* Add custom caret icon */
+.nav-link.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Default (DOWN arrow) */
+.nav-link.dropdown-toggle::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+}
+
+/* When dropdown is OPEN → UP arrow */
+.nav-link.dropdown-toggle[aria-expanded="true"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z'/%3E%3C/svg%3E");
+}
+            
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+  <div class="container">
+
+    <!-- LOGO -->
+    <img src="images/qt=q_95.webp" class="navbar-logo" alt="RDL Logo">
+
+    <!-- TOGGLER -->
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- NAV LINKS -->
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item">
+          <a class="nav-link">Home</a>
+        </li>
+
+        <!-- IOT PRODUCTS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            IoT Products
+          </a>
+          <ul class="dropdown-menu">
+           <li>
+  <a class="dropdown-item" href="data-logger.html">
+    Data Logger IIoT 4.0
+  </a>
+</li>
+
+            <a class="dropdown-item" href="cloud.html">Cloud PLC 4.0</a>
+<a class="dropdown-item" href="biometric-authentication.html">
+  Biometric Authentication
+</a>
+
+
+            <li><a class="dropdown-item" href="hmi-display-board.html">HMI & Display Board</a></li>
+            <li><a class="dropdown-item" href="rfid-leader.html">RFID Reader</a></li>
+            <li><a class="dropdown-item" href="r-lifi.html">R-LiFi</a></li>
+            <li><a class="dropdown-item" href="vibration-sensor.html">Vibration Sensor</a></li>
+          </ul>
+        </li>
+
+        <!-- IOT SOLUTIONS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            IoT Solutions
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="mes.html">MES 4.0</a></li>
+            <li><a class="dropdown-item" href="oee.html">OEE Monitoring Solution</a></li>
+            <li><a class="dropdown-item" href="energy-management.html">Energy Management System</a></li>
+            <li><a class="dropdown-item" href="condition-monitoring.html">Condition Monitoring</a></li>
+            <li><a class="dropdown-item" href="water-balancing.html">Water Balancing System</a></li>
+            <li><a class="dropdown-item" href="cold-storage.html">Cold Storage Monitoring</a></li>
+            <li><a class="dropdown-item" href="uti.html">Utility Monitoring System</a></li>
+            <li><a class="dropdown-item" href="grounding.html">Grounding & ESD Safety</a></li>
+            <li><a class="dropdown-item" href="andon.html">Andon System</a></li>
+            <li><a class="dropdown-item" href="esd">ESD IntelliTrack</a></li>
+            <li><a class="dropdown-item" href="ai.html">AI Based PPE Monitoring</a></li>
+          </ul>
+        </li>
+
+        <!-- MORE -->
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+    More
+  </a>
+
+  <ul class="dropdown-menu dropdown-menu-end">
+
+    <!-- SERVICES -->
+    <li>
+      <span class="dropdown-item ps-4 fw-semibold">Services</span>
+    </li>
+    <li><a class="dropdown-item ps-4" href="technical_support.html">Technical Support</a></li>
+    <li><a class="dropdown-item ps-4" href="consulting.html">Consulting</a></li>
+    <li><a class="dropdown-item ps-4" href="hardware-design.html">Hardware Design</a></li>
+    <li><a class="dropdown-item ps-4" href="software-design.html">Software Design</a></li>
+
+    <li><hr class="dropdown-divider"></li>
+
+    <!-- CASE STUDIES -->
+    <li>
+      <span class="dropdown-item ps-4 fw-semibold">Case Studies</span>
+    </li>
+    <li><a class="dropdown-item ps-4" href="shop-floor.html">Shop Floor Digitization</a></li>
+    <li><a class="dropdown-item ps-4" href="asset-condition.html">Asset Condition Monitor</a></li>
+    <li><a class="dropdown-item ps-4" href="asset-management.html">Asset Management & Audit</a></li>
+    <li><a class="dropdown-item ps-4" href="energy-utility.html">Energy & Utility Management</a></li>
+
+    <li><hr class="dropdown-divider"></li>
+
+    <!-- OTHER LINKS -->
+    <li><a class="dropdown-item" href="shop.html">Shop</a></li>
+    <li><a class="dropdown-item" href="about.html">About Us</a></li>
+    <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+    <li><a class="dropdown-item" href="#">Indino 4.0</a></li>
+    <li><a class="dropdown-item" href="#">News</a></li>
+    <li><a class="dropdown-item" href="#">Become a Partner</a></li>
+
+  </ul>
+</li>
+
+
+        <!-- SEARCH ICON -->
+       <li class="nav-item ms-lg-3">
+  <button class="btn nav-link"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSearch"
+          aria-expanded="false">
+    <i class="bi bi-search"></i>
+  </button>
+</li>
+
+
+        <!-- CART ICON -->
+        <li class="nav-item">
+  <button class="btn nav-link"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#cartModal">
+    <i class="bi bi-cart"></i>
+  </button>
+</li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<!-- SHOP PAGE CONTENT -->
+<section class="py-5">
+
+  <style>
+    /* SHOP LAYOUT */
+    .shop-title {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    /* SIDEBAR */
+    .shop-sidebar {
+      font-size: 16px;
+    }
+
+    .shop-sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .shop-sidebar li {
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+
+    .shop-sidebar li:hover {
+      text-decoration: underline;
+    }
+
+    /* PRODUCT CARD */
+    .product-card {
+      border: 1px solid #eee;
+      padding: 15px;
+      position: relative;
+      text-align: center;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .sale-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #222;
+      color: #fff;
+      font-size: 13px;
+      padding: 4px 10px;
+    }
+
+    .product-title {
+      font-size: 16px;
+      margin: 15px 0 8px;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #999;
+      margin-right: 8px;
+    }
+
+    .new-price {
+      color: #e60000;
+      font-weight: 600;
+    }
+
+    .limited {
+      font-size: 12px;
+      color: #777;
+      margin-top: 10px;
+    }
+  </style>
+
+  <div class="container">
+    <div class="row">
+
+      <!-- LEFT SIDEBAR -->
+      <div class="col-md-3">
+        <div class="shop-sidebar">
+          <h6 class="fw-bold mb-3">All Products</h6>
+          <ul>
+            <li>Data Loggers</li>
+            <li>Cloud PLC</li>
+            <li>Biometric Authentication System</li>
+            <li>Communication Gateway</li>
+            <li>Communication Converters</li>
+            <li>Li Fi</li>
+            <li>RFID</li>
+            <li>Sensors</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="col-md-9">
+
+        <!-- HEADER -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="shop-title">All Products</h2>
+
+          <select class="form-select w-auto">
+            <option>Most popular</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+          </select>
+        </div>
+
+        <!-- PRODUCTS GRID -->
+        <div class="row g-4">
+
+          <!-- PRODUCT 1 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="sale-badge">Sale</span>
+              <img src="https://rdltech.in/shop/ols/products/industrial-data-logger-4g-lte" alt="Product">
+              <div class="limited">LIMITED EDITION</div>
+              <div class="product-title">Industrial Data Logger 4G LTE</div>
+              <div>
+                <span class="old-price">₹13,999.00</span>
+                <span class="new-price">₹12,999.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 2 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="sale-badge">Sale</span>
+              <img src="images/p2.webp" alt="Product">
+              <div class="product-title">Isolated USB to RS485 Adapter</div>
+              <div>
+                <span class="old-price">₹1,899.00</span>
+                <span class="new-price">₹1,579.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 3 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="sale-badge">Sale</span>
+              <img src="images/p3.webp" alt="Product">
+              <div class="limited">LIMITED EDITION</div>
+              <div class="product-title">Industrial Data Logger 4G LTE</div>
+              <div>
+                <span class="old-price">₹15,999.00</span>
+                <span class="new-price">₹14,999.00</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- PRODUCT 1 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="sale-badge">Sale</span>
+              <img src="https://rdltech.in/shop/ols/products/industrial-data-logger-4g-lte" alt="Product">
+              <div class="product-title">Cloud PLC 4.0</div>
+              <div>
+                <span class="old-price">₹6,599.00</span>
+                <span class="new-price">₹5,899.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 2 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="sale-badge">Sale</span>
+              <img src="images/p2.webp" alt="Product">
+              <div class="product-title">Cloud PLC - Ethernet</div>
+              <div>
+                <span class="old-price">₹7,999.00</span>
+                <span class="new-price">₹7,499.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 3 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="sale-badge">Sale</span>
+              <img src="images/p3.webp" alt="Product">
+              <div class="product-title">Cloud PLC - 4G/LTE</div>
+              <div>
+                <span class="old-price">₹7,998.00</span>
+                <span class="new-price">₹7,498.00</span>
+              </div>
+            </div>
+          </div>
+
+           <!-- PRODUCT 1 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="sale-badge">Sale</span>
+              <img src="https://rdltech.in/shop/ols/products/industrial-data-logger-4g-lte" alt="Product">
+              <div class="product-title">Cloud PLC - LORA</div>
+              <div>
+                <span class="old-price">₹9,999.00</span>
+                <span class="new-price">₹9,499.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 2 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="sale-badge">Sale</span>
+              <img src="images/p2.webp" alt="Product">
+              <div class="limited">LIMITED EDITION</div>
+              <div class="product-title">Cloud PLC - RPI - 0</div>
+              <div>
+                <span class="old-price">₹9,599.00</span>
+                <span class="new-price">₹8,999.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 3 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="sale-badge">Sale</span>
+              <img src="images/p3.webp" alt="Product">
+              <div class="limited">LIMITED EDITION</div>
+              <div class="product-title">Biometric Authentication System for PLC and SCADA</div>
+              <div>
+                <span class="old-price">₹14,500.00</span>
+                <span class="new-price">₹13,500.00</span>
+              </div>
+            </div>
+          </div>  
+
+
+                     <!-- PRODUCT 1 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="sale-badge">Sale</span>
+              <img src="https://rdltech.in/shop/ols/products/industrial-data-logger-4g-lte" alt="Product">
+              <div class="product-title">Modbus TCP Gateway</div>
+              <div>
+                <span class="old-price">₹5,999.00</span>
+                <span class="new-price">₹4,999.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 2 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="sale-badge">Sale</span>
+              <img src="images/p2.webp" alt="Product">
+              <div class="product-title">Isolated Serial USB to RS232 Adapter</div>
+              <div>
+                <span class="old-price">₹1,149.00</span>
+                <span class="new-price">₹999.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 3 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="sale-badge">Sale</span>
+              <img src="images/p3.webp" alt="Product">
+              <div class="product-title">Serial RS232 to Ethernet / WiFi Gateway</div>
+              <div>
+                <span class="old-price">₹5,499.00</span>
+                <span class="new-price">₹4,999.00</span>
+              </div>
+            </div>
+          </div>
+
+                               <!-- PRODUCT 1 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="sale-badge">Sale</span>
+              <img src="https://rdltech.in/shop/ols/products/industrial-data-logger-4g-lte" alt="Product">
+              <div class="limited">LIMITED EDITION</div>
+              <div class="product-title">LiFi Nano V2</div>
+              <div>
+                <span class="old-price">₹23,999.00</span>
+                <span class="new-price">₹22,999.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 2 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="sale-badge">Sale</span>
+              <img src="images/p2.webp" alt="Product">
+              <div class="product-title">UHF RFID Reader</div>
+              <div>
+                <span class="old-price">₹19,500.00</span>
+                <span class="new-price">₹18,500.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 3 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="sale-badge">Sale</span>
+              <img src="images/p3.webp" alt="Product">
+              <div class="product-title">Vibration Sensor</div>
+              <div>
+                <span class="old-price">₹5,999.00</span>
+                <span class="new-price">₹5,331.00</span>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
