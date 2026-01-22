@@ -248,7 +248,35 @@ footer{background:#000;color:#fff;padding:20px}
 .nav-link.dropdown-toggle[aria-expanded="true"]::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z'/%3E%3C/svg%3E");
 }
-            
+  
+/* ================= WHATSAPP BUTTON ================= */
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 42px;
+  background-color: #4f6368; /* matches screenshot */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #3f5458;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* WhatsApp icon */
+.whatsapp-icon {
+  width: 18px;
+  height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+}          
 
 </style>
 
@@ -273,7 +301,7 @@ footer{background:#000;color:#fff;padding:20px}
       <ul class="navbar-nav ms-auto align-items-lg-center">
 
         <li class="nav-item">
-          <a class="nav-link">Home</a>
+          <a class="nav-link" href="index.html">Home</a>
         </li>
 
         <!-- IOT PRODUCTS -->
@@ -364,10 +392,10 @@ footer{background:#000;color:#fff;padding:20px}
     <li>
       <span class="dropdown-item ps-4 fw-semibold">Services</span>
     </li>
-    <li><a class="dropdown-item ps-4" href="#">Technical Support</a></li>
-    <li><a class="dropdown-item ps-4" href="#">Consulting</a></li>
-    <li><a class="dropdown-item ps-4" href="#">Hardware Design</a></li>
-    <li><a class="dropdown-item ps-4" href="#">Software Design</a></li>
+    <li><a class="dropdown-item ps-4" href="technical_support.html">Technical Support</a></li>
+    <li><a class="dropdown-item ps-4" href="consulting.html">Consulting</a></li>
+    <li><a class="dropdown-item ps-4" href="hardware-design.html">Hardware Design</a></li>
+    <li><a class="dropdown-item ps-4" href="software-design.html">Software Design</a></li>
 
     <li><hr class="dropdown-divider"></li>
 
@@ -376,12 +404,12 @@ footer{background:#000;color:#fff;padding:20px}
     <li><hr class="dropdown-divider"></li>
 
     <!-- OTHER LINKS -->
-    <li><a class="dropdown-item" href="#">Shop</a></li>
-    <li><a class="dropdown-item" href="#">About Us</a></li>
-    <li><a class="dropdown-item" href="#">Contact Us</a></li>
-    <li><a class="dropdown-item" href="#">Indino 4.0</a></li>
-    <li><a class="dropdown-item" href="#">News</a></li>
-    <li><a class="dropdown-item" href="#">Become a Partner</a></li>
+    <li><a class="dropdown-item" href="shop.html">Shop</a></li>
+    <li><a class="dropdown-item" href="about.html">About Us</a></li>
+    <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+    <li><a class="dropdown-item" href="indino.html">Indino 4.0</a></li>
+    <li><a class="dropdown-item" href="news.html">News</a></li>
+    <li><a class="dropdown-item" href="part.html">Become a Partner</a></li>
 
   </ul>
 </li>
@@ -913,9 +941,14 @@ footer{background:#000;color:#fff;padding:20px}
 
       
 
-        <a href="https://wa.me/918088423347" target="_blank" class="btn btn-outline-black mb-4">
-         Message us on WhatsApp
-        </a>
+            <a href="https://wa.me/919886271407"
+       target="_blank"
+       class="whatsapp-btn">
+
+      <img src="images/whatsapp.jpg" alt="WhatsApp" class="whatsapp-icon">
+      <span>Message us on WhatsApp</span>
+
+    </a>
 
         <p class="mb-2 fw-bold">RDL Technologies Pvt Ltd</p>
         <p class="mb-2">

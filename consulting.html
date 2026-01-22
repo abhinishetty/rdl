@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RDL Technologies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+body{padding-top:70px;font-family:Arial}
+.card img{height:200px;object-fit:cover}
+.stats h3{color:#0a2540;font-weight:bold}
+footer{background:#000;color:#fff;padding:20px}
+
+/* Custom white → black button */
+.btn-outline-black {
+  background-color: #fff;
+  color: #000;
+  border: 1.5px solid #000;
+  padding: 8px 22px;              /* makes it oval, not short */
+  border-radius: 50px;            /* bent rectangle / oval */
+  display: inline-flex;
+  align-items: center;            /* vertical center */
+  justify-content: center;        /* horizontal center */
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-black:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.sustain-img {
+  height: 250px;        /* smaller size */
+  width: auto;
+  object-fit: contain;
+}
+/* Remove border from Solutions cards */
+.card {
+  border: none;
+}
+
+.awards-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.awards-track {
+  display: flex;
+  animation: awardsStep 18s steps(5) infinite;
+}
+
+.award-card {
+  flex: 0 0 33.333%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 24px;
+  border-right: 2px solid #ddd;
+}
+
+.award-card:last-child {
+  border-right: none;
+}
+
+.award-img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+.award-card p {
+  text-align: left;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* STEP SLIDE */
+@keyframes awardsStep {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-166.666%);
+  }
+}
+
+.clients-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.clients-track {
+  display: flex;
+  animation: clientsStep 20s steps(7) infinite;
+}
+
+.client {
+  flex: 0 0 calc(100% / 7); /* ALWAYS 7 VISIBLE */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.client img {
+  height: 105px;        /* adjust if needed */
+  width: auto;
+  object-fit: contain;
+}
+
+/* STEP-BASED SLIDE (ONE LOGO AT A TIME) */
+@keyframes clientsStep {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.social-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.social-divider::before,
+.social-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccb7b7;
+}
+
+.social-divider::before {
+  margin-right: 15px;
+}
+
+.social-divider::after {
+  margin-left: 15px;
+}
+
+.social-divider span {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #d3c9c9;
+}
+
+.section-divider::before {
+  margin-right: 15px;
+}
+
+.section-divider::after {
+  margin-left: 15px;
+}
+
+.section-divider span {
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 600;   /* semi-bold */
+}
+
+/* Scrollable dropdown for "More" */
+.navbar .dropdown-menu {
+  max-height: 260px;        /* controls height */
+  overflow-y: auto;        /* vertical scrollbar */
+  min-width: 220px;        /* reduce dropdown width */
+  font-size: 14px;         /* slightly smaller text */
+}
+
+/* Optional: smooth scrollbar (Chrome/Edge) */
+/* Navbar must be sticky */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+}
+
+/* Default logo size */
+.navbar-logo {
+  height: 160px;
+  transition: height 0.3s ease;
+}
+
+/* Scroll-driven animation (NO JS) */
+@supports (animation-timeline: scroll()) {
+
+  .navbar-logo {
+    animation: logoShrink linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0 150px;
+  }
+
+  @keyframes logoShrink {
+    from {
+      height: 110px;
+    }
+    to {
+      height: 70px;
+    }
+  }
+}
+/* Remove default Bootstrap caret */
+.nav-link.dropdown-toggle::after {
+  display: none;
+}
+
+/* Add custom caret icon */
+.nav-link.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Default (DOWN arrow) */
+.nav-link.dropdown-toggle::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+}
+
+/* When dropdown is OPEN → UP arrow */
+.nav-link.dropdown-toggle[aria-expanded="true"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z'/%3E%3C/svg%3E");
+}
+            
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+  <div class="container">
+
+    <!-- LOGO -->
+    <img src="images/qt=q_95.webp" class="navbar-logo" alt="RDL Logo">
+
+    <!-- TOGGLER -->
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- NAV LINKS -->
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+        <!-- IOT PRODUCTS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            IoT Products
+          </a>
+          <ul class="dropdown-menu">
+           <li>
+  <a class="dropdown-item" href="data-logger.html">
+    Data Logger IIoT 4.0
+  </a>
+</li>
+
+            <a class="dropdown-item" href="cloud.html">Cloud PLC 4.0</a>
+<a class="dropdown-item" href="biometric-authentication.html">
+  Biometric Authentication
+</a>
+
+
+            <li><a class="dropdown-item" href="hmi-display-board.html">HMI & Display Board</a></li>
+            <li><a class="dropdown-item" href="rfid-leader.html">RFID Reader</a></li>
+            <li><a class="dropdown-item" href="r-lifi.html">R-LiFi</a></li>
+            <li><a class="dropdown-item" href="vibration-sensor.html">Vibration Sensor</a></li>
+          </ul>
+        </li>
+
+        <!-- IOT SOLUTIONS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            IoT Solutions
+          </a>
+          <ul class="dropdown-menu">
+           <li><a class="dropdown-item" href="mes.html">MES 4.0</a></li>
+            <li><a class="dropdown-item" href="oee.html">OEE Monitoring Solution</a></li>
+            <li><a class="dropdown-item" href="energy.html">Energy Monitoring System</a></li>
+           <li><a class="dropdown-item" href="cond.html">Condition Monitoring</a></li>
+<li><a class="dropdown-item" href="water.html">Water Balancing System</a></li>
+<li><a class="dropdown-item" href="coldd.html">Cold Storage Monitoring</a></li>
+<li><a class="dropdown-item" href="uti.html">Utility Monitoring System</a></li>
+<li><a class="dropdown-item" href="ground.html">Grounding &amp; ESD Safety</a></li>
+<li><a class="dropdown-item" href="andon.html">Andon System</a></li>
+<li><a class="dropdown-item" href="esd.html">ESD IntelliTrack</a></li>
+<li><a class="dropdown-item" href="ai.html">AI Based PPE Monitoring</a></li>
+          </ul>
+        </li>
+
+        <!-- MORE -->
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+    More
+  </a>
+
+  <ul class="dropdown-menu dropdown-menu-end">
+
+    <!-- SERVICES -->
+    <li>
+      <span class="dropdown-item ps-4 fw-semibold">Services</span>
+    </li>
+    <li><a class="dropdown-item ps-4" href="technical_support.html">Technical Support</a></li>
+    <li><a class="dropdown-item ps-4" href="consulting.html">Consulting</a></li>
+    <li><a class="dropdown-item ps-4" href="hardware-design.html">Hardware Design</a></li>
+    <li><a class="dropdown-item ps-4" href="software-design.html">Software Design</a></li>
+
+    <li><hr class="dropdown-divider"></li>
+
+    <!-- CASE STUDIES -->
+    <li>
+      <span class="dropdown-item ps-4 fw-semibold">Case Studies</span>
+    </li>
+    <li><a class="dropdown-item ps-4" href="floor.html">Shop Floor Digitization</a></li>
+    <li><a class="dropdown-item ps-4" href="asset.html">Asset Condition Monitor</a></li>
+    <li><a class="dropdown-item ps-4" href="asm.html">Asset Management & Audit</a></li>
+    <li><a class="dropdown-item ps-4" href="uti.html">Energy & Utility Management</a></li>
+
+    <li><hr class="dropdown-divider"></li>
+
+    <!-- OTHER LINKS -->
+    <li><a class="dropdown-item" href="shop.html">Shop</a></li>
+    <li><a class="dropdown-item" href="#">About Us</a></li>
+    <li><a class="dropdown-item" href="#">Contact Us</a></li>
+    <li><a class="dropdown-item" href="#">Indino 4.0</a></li>
+    <li><a class="dropdown-item" href="#">News</a></li>
+    <li><a class="dropdown-item" href="#">Become a Partner</a></li>
+
+  </ul>
+</li>
+
+
+        <!-- SEARCH ICON -->
+       <li class="nav-item ms-lg-3">
+  <button class="btn nav-link"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSearch"
+          aria-expanded="false">
+    <i class="bi bi-search"></i>
+  </button>
+</li>
+
+
+        <!-- CART ICON -->
+        <li class="nav-item">
+  <button class="btn nav-link"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#cartModal">
+    <i class="bi bi-cart"></i>
+  </button>
+</li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="py-5">
+
+  <style>
+
+.center-text {
+  text-align: center;
+}
+  </style>
+
+
+<div class="text-center mb-4">
+      <img
+        src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/consult_banner.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:2480,cg:true"
+        class="img-fluid rounded shadow-sm"
+        alt="PLC and SCADA Systems"
+        style="max-width: 900px;">
+    </div>
+
+<section class="py-5">
+
+  <style>
+    .rlifi-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      color: #444;
+      font-size: 18px;
+      justify-content: center;
+    }
+
+    .rlifi-title-wrap::before,
+    .rlifi-title-wrap::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #cfcfcf;
+    }
+     .center-text {
+  text-align: center;
+}
+  </style>
+
+
+
+</section>
+
+<div class="container">
+    <div class="row align-items-center">
+
+      <!-- LEFT IMAGE -->
+      <div class="col-md-6 text-center mb-4 mb-md-0">
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/5604135_2918142-b409b92.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true/qt=q:5"
+             alt="Digital Log Book"
+             class="img-fluid digital-logbook-img">
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="col-md-6">
+        <div class="center-text">
+        <h3 class="digital-logbook-title">Looking for IoT Product Development ?<br>
+            - You Might Have a Lot of Questions...</h3>
+        </div>
+             <ul class="digital-logbook-list">
+                <li>How can I produce a cost effective & robust IoT product?</li>
+                <li>Which is the  better and secured reliable communication protocol to<br>
+                    communicate with devices and cloud platforms?</li>
+                <li>How do I meet  product design for  EMC /EMI Compliance and CE<br>
+                    Certification standards ?</li>
+                <li>Which cloud platform is better for  hosting the solution to my customer<br>
+                    ? Which is the cost effective on premise or cloud infrastructure. ?</li>
+                <li>How to handle and segregate a large amount of data ?how to increase<br>
+                    the  system and database performance ? How do I maintain data<br>
+                    security ?</li>
+                <li>How to collect PLC and HMI data from the shop floor?</li>
+                <li>Which is the  better and secured reliable communication protocol to<br>
+                    communicate with devices a cloud platforms?</li>
+             </ul>
+
+        
+      </div>
+
+      
+
+    </div>
+  </div>
+
+
+
+<section class="py-5">
+
+  <style>
+
+.center-text {
+  text-align: center;
+}
+  </style>
+
+
+
+
+
+<section class="py-5">
+
+  <style>
+    .rlifi-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      color: #444;
+      font-size: 18px;
+      justify-content: center;
+    }
+
+    .rlifi-title-wrap::before,
+    .rlifi-title-wrap::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #cfcfcf;
+    }
+     .center-text {
+  text-align: center;
+}
+  </style>
+
+
+
+</section>
+
+<div class="container">
+    <div class="row align-items-center">
+
+      <!-- LEFT IMAGE -->
+      
+
+      <!-- RIGHT CONTENT -->
+      <div class="col-md-6">
+        <div class="center-text">
+        <h3 class="digital-logbook-title">RDL's Domain Knowledge will Help You<br>
+            in Analyzing Your Technical<br>
+            Requirements and Developing Scalable<br>
+            Product Solutions.</h3>
+        </div>
+             <ul class="digital-logbook-list">
+                <li> RDL's Decades of experience in developing IoT enabled  products and<br>
+                    platforms   has given us the opportunity to gain an in-depth<br>
+                    understanding of hundreds of  distinct application  devices, setups, and<br>
+                    use cases.  </li>
+             </ul>
+
+        
+      </div>
+
+      
+
+<div class="col-md-6 text-center mb-4 mb-md-0">
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/development-dc2e2af.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true/qt=q:3"
+             alt="Digital Log Book"
+             class="img-fluid digital-logbook-img">
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+<section class="py-5">
+
+  <style>
+    .rlifi-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      color: #444;
+      font-size: 18px;
+      justify-content: center;
+    }
+
+    .rlifi-title-wrap::before,
+    .rlifi-title-wrap::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #cfcfcf;
+    }
+     .center-text {
+  text-align: center;
+}
+  </style>
+
+
+
+</section>
+
+<div class="container">
+    <div class="row align-items-center">
+
+      <!-- LEFT IMAGE -->
+      
+<div class="col-md-6 text-center mb-4 mb-md-0">
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/development-03992b0.jpg/:/rs=w:600,cg:true,m/qt=q:3"
+             alt="Digital Log Book"
+             class="img-fluid digital-logbook-img">
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="col-md-6">
+        <div class="center-text">
+        <h3 class="digital-logbook-title">RDL will Reduce Your Development<br>
+            Cost and Time by 70%.</h3>
+        </div>
+             <ul class="digital-logbook-list">
+                <li>Accelerated Development.</li>
+                <li>Cost Efficiency.</li>
+                <li>Get POC , MVP /  Production Sample in  less than 30 days .</li>
+             </ul>
+
+        
+      </div>
+
+      
+
+
+
+    </div>
+  </div>
+
+
+
+  <section class="py-5">
+
+  <style>
+    .rlifi-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      color: #444;
+      font-size: 18px;
+      justify-content: center;
+    }
+
+    .rlifi-title-wrap::before,
+    .rlifi-title-wrap::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #cfcfcf;
+    }
+     .center-text {
+  text-align: center;
+}
+  </style>
+
+
+
+</section>
+
+<div class="container">
+    <div class="row align-items-center">
+
+      <!-- LEFT IMAGE -->
+      
+
+
+      <!-- RIGHT CONTENT -->
+      <div class="col-md-6">
+        <div class="center-text">
+        <h3 class="digital-logbook-title">  Product Certification and Rugged<br>
+            Endurance</h3>
+        </div>
+             <ul class="digital-logbook-list">
+                <li>RDL Assisted  EMC / EMI compliance enabled design will  withstand<br>
+                    industrial noise  and Harsh Environmental Conditions.</li>
+             </ul>
+
+        
+      </div>
+
+      <div class="col-md-6 text-center mb-4 mb-md-0">
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/19949566_6137729.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true/qt=q:3"
+             alt="Digital Log Book"
+             class="img-fluid digital-logbook-img">
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+
+  <section class="py-5">
+
+  <style>
+    .rlifi-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      color: #444;
+      font-size: 18px;
+      justify-content: center;
+    }
+
+    .rlifi-title-wrap::before,
+    .rlifi-title-wrap::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #cfcfcf;
+    }
+     .center-text {
+  text-align: center;
+}
+  </style>
+
+
+
+</section>
+
+<div class="container">
+    <div class="row align-items-center">
+
+      <!-- LEFT IMAGE -->
+       <div class="col-md-6 text-center mb-4 mb-md-0">
+        <img src="https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/10798320_19362666.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true/qt=q:17"
+             alt="Digital Log Book"
+             class="img-fluid digital-logbook-img">
+      </div>
+
+
+      <!-- RIGHT CONTENT -->
+      <div class="col-md-6">
+        <div class="center-text">
+        <h3 class="digital-logbook-title">Sourcing & Manufacturing</h3>
+        </div>
+             <ul class="digital-logbook-list">
+                <li> Optimize the BOM and cut down your manufacturing cost by 30%</li>
+             </ul>
+
+        
+      </div>
+
+     
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+  <section class="py-5">
+
+  <style>
+    .industry-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 60px;
+      color: #444;
+      font-size: 18px;
+      justify-content: center;
+    }
+
+    .industry-title-wrap::before,
+    .industry-title-wrap::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #cfcfcf;
+    }
+
+    .industry-item-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .industry-img {
+      max-width: 280px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .industry-item-title {
+        font-size: 18px;
+      }
+    }
+    .center-text {
+  text-align: center;
+}
+  </style>
+
+  <div class="container">
+
+    <!-- SECTION TITLE -->
+    <div class="industry-title-wrap">
+      <span>CONTACT US</span>
+    </div>
+
+    <div class="center-text">
+        <h3 ><strong>We ship worldwide; contact us for your shipping needs.</strong></h3>
+        
+    </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-5">
+
+      <div class="col-md-6">
+        <h3 class="fw-bold mb-3">Contact Us</h3>
+        <p>We ship worldwide; contact us for your shipping needs.</p>
+
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Email<span class="text-danger">*</span></label>
+            <input type="email" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" rows="4"></textarea>
+          </div>
+
+          <button class="btn btn-dark">Send</button>
+
+          <p class="small text-muted mt-2">
+            This site is protected by reCAPTCHA and the Google
+            <a href="#">Privacy Policy</a> and
+            <a href="#">Terms of Service</a> apply.
+          </p>
+        </form>
+      </div>
+
+      <div class="col-md-6">
+        <p class="fw-bold">Message us on WhatsApp</p>
+        <p>
+          <strong>RDL Technologies Pvt Ltd</strong><br>
+          Adyar, Mangaluru, Karnataka, India
+        </p>
+        <p><strong>Phone:</strong> 098862 71407</p>
+
+        <h6 class="fw-bold mt-4">Reseller & Partner Network</h6>
+        <p>
+          Bengaluru | Mumbai | Nasik | Pune | Coimbatore | Gujarat |
+          Noida | UAE | Dubai | Chennai | USA
+        </p>
+
+        <h6 class="fw-bold mt-4">Hours</h6>
+        <ul class="list-unstyled">
+          <li>Mon – Fri: 09:00 am – 05:00 pm</li>
+          <li>Sat: Closed</li>
+          <li>Sun: Closed</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-4 bg-dark text-white text-center">
+  <div class="container">
+    <p class="mb-1">© 2026 RDL Technologies Pvt Ltd – All Rights Reserved.</p>
+    <p class="small">
+      Data Logger IIoT 4.0 | Cloud PLC 4.0 | Energy Management System |
+      Condition Monitoring | Water Balancing System | ShopIndino 4.0
+    </p>
+  </div>
+</footer>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
