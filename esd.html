@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Andon – Production Monitoring System | RDL</title>
+<title>EMS – Online Live ESD Monitoring System | RDL</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
 <style>
-body{padding-top:70px;font-family:Arial}
-.card img{height:200px;object-fit:cover}
-.stats h3{color:#0a2540;font-weight:bold}
-footer{background:#000;color:#fff;padding:20px}
+body{padding-top:80px;color:#555}
+.section-title{font-weight:600;color:#333}
+.text-grey{color:#666;font-size:1.05rem}
 
 /* Custom white → black button */
 .btn-outline-black {
@@ -324,32 +324,6 @@ footer{background:#000;color:#fff;padding:20px}
 
           </ul>
         </li>
-<li class="nav-item dropdown">
-  <a
-    class="nav-link dropdown-toggle"
-    href="#"
-    id="caseStudiesDropdown"
-    role="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false">
-    Case Studies
-  </a>
-
-  <ul class="dropdown-menu" aria-labelledby="caseStudiesDropdown">
-    <li>
-      <a class="dropdown-item" href="floor.html">Shop Floor Digitization</a>
-    </li>
-    <li>
-      <a class="dropdown-item" href="#">Asset Condition Monitor</a>
-    </li>
-    <li>
-      <a class="dropdown-item" href="#">Asset Management & Audit</a>
-    </li>
-    <li>
-      <a class="dropdown-item" href="#">Energy & Utility Manage</a>
-    </li>
-  </ul>
-</li>
 
         <!-- MORE -->
 <li class="nav-item dropdown">
@@ -370,7 +344,14 @@ footer{background:#000;color:#fff;padding:20px}
 
     <li><hr class="dropdown-divider"></li>
 
-  
+    <!-- CASE STUDIES -->
+    <li>
+      <span class="dropdown-item ps-4 fw-semibold">Case Studies</span>
+    </li>
+    <li><a class="dropdown-item ps-4" href="#">Shop Floor Digitization</a></li>
+    <li><a class="dropdown-item ps-4" href="#">Asset Condition Monitor</a></li>
+    <li><a class="dropdown-item ps-4" href="#">Asset Management & Audit</a></li>
+    <li><a class="dropdown-item ps-4" href="#">Energy & Utility Management</a></li>
 
     <li><hr class="dropdown-divider"></li>
 
@@ -421,218 +402,188 @@ footer{background:#000;color:#fff;padding:20px}
   </div>
 </div>
 
-<!-- HERO -->
-
+<!-- HERO IMAGE -->
+<section class="pt-4">
+    <h5 class="text-center">EMS – ONLINE LIVE ESD MONITORING SYSTEM</h5>
+  <div class="container text-center">
+    <img src="images/r1.webp" class="img-fluid rounded shadow-sm" style="max-width:1100px;">
+  </div>
+</section>
 
 <!-- INTRO -->
-<section class="py-5 text-center">
-  <div class="container">
-    <h2 class="fw-bold mb-3">Andon – Production Monitoring System</h2>
-<!-- YOUTUBE VIDEO -->
-<section class="pb-5">
+<section class="py-5">
   <div class="container text-center">
-    <div class="ratio ratio-16x9">
-      <iframe src="https://www.youtube.com/embed/Yc9OaMiNR1Y" allowfullscreen></iframe>
+    
+
+    <p class="fw-bold fs-5">
+      100% Live ESD Compliance. Zero Compromise
+    </p>
+
+    <p class="text-grey">
+      RDL EMS Online Live ESD Monitoring Solution continuously monitors operator
+      wrist-strap resistance and verifies grounding integrity of ESD-protected
+      work surfaces in real time. The system ensures uninterrupted monitoring
+      of personnel and workstations, enabling proactive ESD fault detection and
+      stable electronics manufacturing.
+    </p>
+
+    <!-- YOUTUBE -->
+    <div class="ratio ratio-16x9 mt-4">
+      <iframe src="https://www.youtube.com/embed/TuN3ytK3Fe0" allowfullscreen></iframe>
     </div>
   </div>
 </section>
-    <p class="text-grey">
-      RDL Industrial Andon Solution is a smart, real-time production monitoring and alerting
-      system designed to improve shop-floor visibility, reduce downtime, and enable faster
-      decision-making.
-    </p>
+<img src="images/r2.webp" class="img-fluid w-100">
 
-    <p class="text-grey">
-      By combining visual indicators, audio alerts, and digital dashboards, the solution
-      empowers operators, supervisors, and management to respond instantly to production issues.
-    </p>
-  </div>
-</section>
-
-
-
-<!-- KEY CHALLENGES -->
+<!-- FEATURES -->
 <section class="py-5 bg-light">
   <div class="container">
-    <div class="row align-items-center g-5">
+    <h3 class="section-title text-center mb-4">Features</h3>
+
+    <div class="row">
       <div class="col-md-6">
-        <img src="images/q1.webp" class="img-fluid rounded shadow-sm">
-      </div>
-      <div class="col-md-6">
-        <h3 class="section-title">Key Challenges Addressed</h3>
         <ul class="text-grey fs-5">
-          <li>Unplanned machine downtime</li>
-          <li>Delayed response to production issues</li>
-          <li>Lack of real-time shop-floor visibility</li>
-          <li>Manual escalation and communication gaps</li>
-          <li>Inefficient productivity & loss tracking</li>
+          <li>Alerting with fault location</li>
+          <li>Accurate earth resistance measurement</li>
+          <li>Bonding & grounding connectivity status</li>
+          <li>Electrical grounding history with fault prediction</li>
+          <li>Automatic alternate ground source selection</li>
+          <li>Grounding system maintenance alert</li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <ul class="text-grey fs-5">
+          <li>MODBUS TCP / RTU, JSON, MQTT, FTP support</li>
+          <li>Real-time network status availability</li>
+          <li>Visual & audio failure alerts</li>
+          <li>Modular design & extendibility</li>
+          <li>Easy configuration & maintenance</li>
+          <li>Centralized SQL data storage</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOLUTION HIGHLIGHTS -->
+<!-- WHY LIVE ESD -->
 <section class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <div class="col-md-6">
+        <h3 class="section-title mb-3">
+          Why Live ESD Monitoring System is Required?
+        </h3>
+
+        <p class="text-grey">
+          Equipment, furniture, clothing and common workplace items can store
+          thousands of volts of electrostatic charge, while only 25 volts can
+          permanently damage an IC.
+        </p>
+
+        <p class="text-grey">
+          ESD losses globally range between $0.5–5 billion annually due to
+          unseen damage in SMT manufacturing.
+        </p>
+      </div>
+
+      <div class="col-md-6 text-center">
+        <img src="images/r3.webp" class="img-fluid rounded shadow-sm">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ESD & SEMICONDUCTOR -->
+<section class="py-5 bg-light">
   <div class="container">
     <div class="row align-items-center g-5 flex-md-row-reverse">
+
       <div class="col-md-6">
-        <img src="images/q2.webp" class="img-fluid rounded shadow-sm">
+        <h3 class="section-title mb-3">ESD & Semiconductor Devices</h3>
+
+        <p class="text-grey">
+          Electrostatic discharge is a sudden surge of electricity between two
+          charged objects. Repeated discharge events degrade internal IC
+          structures over time.
+        </p>
+
+        <p class="text-grey">
+          Currents passing through PN junctions burn microscopic holes and
+          cause permanent device failures.
+        </p>
       </div>
-      <div class="col-md-6">
-        <h3 class="section-title">Solution Highlights</h3>
-        <ul class="text-grey fs-5">
-          <li>Real-time visual & audio alerts</li>
-          <li>Multi-level escalation to supervisors & managers</li>
-          <li>Live digital dashboards</li>
-          <li>PLC, SCADA, MES & ERP integration</li>
-          <li>Historical analytics & reports</li>
-          <li>Customizable Andon dashboards</li>
-        </ul>
+
+      <div class="col-md-6 text-center">
+        <img src="images/r4.webp" class="img-fluid rounded shadow-sm">
       </div>
+
     </div>
   </div>
 </section>
-<!-- CUSTOMIZABLE ANDON DASHBOARDS -->
-<section class="py-5">
-  <div class="container text-center">
 
-    <h5 class="section-title mb-4">
-      Customizable Andon Dashboards
+<!-- ANSI ESD -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <div class="col-md-6">
+        <h3 class="section-title mb-3">ANSI/ESD S20.20 Control Program</h3>
+
+        <p class="text-grey">
+          ANSI/ESD S20.20 is the global standard ensuring protection from
+          electrostatic charges above 100V.
+        </p>
+
+        <ul class="text-grey fs-5">
+          <li>Improves ESD awareness</li>
+          <li>Reduces component failures</li>
+          <li>Saves cost & increases quality</li>
+          <li>Improves industry compliance</li>
+          <li>Enhances customer confidence</li>
+        </ul>
+      </div>
+
+      <div class="col-md-6 text-center">
+        <img src="images/r5.webp" class="img-fluid rounded shadow-sm">
+      </div>
+
+    </div>
+  </div>
+</section>
+<img src="images/r6.webp" class="img-fluid w-100">
+<!-- GALLERY -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h5 class="fw-semibold text-center mb-4">
+      Take a Peek Inside RDL Technologies Pvt Ltd: Our Store Gallery
     </h5>
 
-    <!-- SINGLE IMAGE -->
-    <div class="mb-4">
-      <img
-        src="images/q3.webp"
-        class="img-fluid rounded shadow-sm"
-        style="max-width: 900px;"
-        alt="Customizable Andon Dashboard Main">
-    </div>
-    <h5>Reports</h5>
-
-    <!-- TWO IMAGES IN ONE ROW -->
-    <div class="row justify-content-center g-4">
-      <div class="col-md-6">
-        <img
-          src="images/q4.webp"
-          class="img-fluid rounded shadow-sm"
-          alt="Andon Dashboard View 1">
-      </div>
-
-      <div class="col-md-6">
-        <img
-          src="images/q5.webp"
-          class="img-fluid rounded shadow-sm"
-          alt="Andon Dashboard View 2">
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- OPTIMIZE PRODUCTION -->
-<section class="py-5 bg-light">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-md-6">
-        <img src="images/q6.webp" class="img-fluid rounded shadow-sm">
-      </div>
-      <div class="col-md-6">
-        <h3 class="section-title">Optimise the Production Process & Reduce Downtime</h3>
-        <ul class="text-grey fs-5">
-          <li>Retrofit solution for all production environments</li>
-          <li>Compatible with existing tower lights</li>
-          <li>Wired & wireless network support</li>
-          <li>Custom labeled push buttons</li>
-          <li>Centralized machine monitoring view</li>
-          <li>Cloud / On-premise deployment</li>
-          <li>Access anytime, anywhere</li>
-        </ul>
-      </div>
+    <div class="row g-4">
+      <div class="col-md-4"><img src="images/r7.webp" class="img-fluid rounded shadow-sm"></div>
+      <div class="col-md-4"><img src="images/r8.webp" class="img-fluid rounded shadow-sm"></div>
+      <div class="col-md-4"><img src="images/r9.webp" class="img-fluid rounded shadow-sm"></div>
     </div>
   </div>
 </section>
 
-<!-- HARDWARE -->
-<section class="py-5">
-  <div class="container">
-    <h3 class="section-title text-center mb-4">Hardware</h3>
-
-    <!-- TRANSCEIVER -->
-    <div class="row align-items-center g-5 mb-5">
-      <div class="col-md-6">
-        <img src="images/q4.webp" class="img-fluid rounded shadow-sm">
-      </div>
-      <div class="col-md-6">
-        <h5 class="fw-semibold">Transceiver</h5>
-        <ul class="text-grey fs-5">
-          <li>MODBUS RTU / TCP, MQTT, JSON, FTP</li>
-          <li>SSL secure communication</li>
-          <li>Industrial-grade EMC/EMI compliance</li>
-          <li>Wi-Fi, Bluetooth & Modbus support</li>
-          <li>4× DI & 4× Relay outputs</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- EDGE GATEWAY -->
-    <div class="row align-items-center g-5 flex-md-row-reverse mb-5">
-      <div class="col-md-6">
-        <img src="images/q5.webp" class="img-fluid rounded shadow-sm">
-      </div>
-      <div class="col-md-6">
-        <h5 class="fw-semibold">Edge Gateway</h5>
-        <p class="text-grey fs-5">
-          Collects and sends real-time data from all edge devices
-          to the Andon Application Server.
-        </p>
-      </div>
-    </div>
-
-    <!-- LARGE DISPLAY -->
-    <div class="row align-items-center g-5">
-      <div class="col-md-6">
-        <img src="images/q6.webp" class="img-fluid rounded shadow-sm">
-      </div>
-      <div class="col-md-6">
-        <h5 class="fw-semibold">Large Display</h5>
-        <p class="text-grey fs-5">
-          Available Sizes: 32”, 43”, 50”, 55”, 65”, 75”, 85”<br>
-          Display Type: LED
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- IMAGE GALLERY -->
-<section class="py-5 bg-light">
- 
-        <img src="images/q8.webp" class="img-fluid rounded shadow-sm">
-     
- <img src="images/q9.webp" class="img-fluid rounded shadow-sm">
-</section>
-
-<!-- DOWNLOADS -->
+<!-- CTA -->
 <section class="py-5 text-center">
-  <div class="container">
-    <h3 class="section-title mb-3">Downloads</h3>
-    <a href="#" class="btn btn-dark">Datasheet</a>
-  </div>
+  <a href="#" class="btn btn-outline-dark me-3">DATASHEET</a>
+  <br>
+  <br>
+  <a href="#" class="btn btn-dark">Become a Reseller</a>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-dark text-white py-4 text-center">
-  <div class="container">
-    <p class="mb-1">© 2026 RDL Technologies Pvt Ltd – All Rights Reserved.</p>
-    <p class="small">
-      Data Logger IIoT 4.0 | Cloud PLC 4.0 | Energy Management System |
-      Condition Monitoring | Water Balancing System | ShopIndino 4.0
-    </p>
-  </div>
+<footer class="py-4 bg-dark text-white text-center">
+  <p class="mb-1">© 2026 RDL Technologies Pvt Ltd – All Rights Reserved.</p>
+  <p class="small">
+    Data Logger IIoT 4.0 | Cloud PLC 4.0 | Energy Management System |
+    Condition Monitoring | Water Balancing System | ShopIndino 4.0
+  </p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

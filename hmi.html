@@ -27,7 +27,245 @@
   ul.clean-list li{
     margin-bottom:8px;
   }
+
+/* Custom white → black button */
+.btn-outline-black {
+  background-color: #fff;
+  color: #000;
+  border: 1.5px solid #000;
+  padding: 8px 22px;              /* makes it oval, not short */
+  border-radius: 50px;            /* bent rectangle / oval */
+  display: inline-flex;
+  align-items: center;            /* vertical center */
+  justify-content: center;        /* horizontal center */
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-black:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.sustain-img {
+  height: 250px;        /* smaller size */
+  width: auto;
+  object-fit: contain;
+}
+/* Remove border from Solutions cards */
+.card {
+  border: none;
+}
+
+.awards-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.awards-track {
+  display: flex;
+  animation: awardsStep 18s steps(5) infinite;
+}
+
+.award-card {
+  flex: 0 0 33.333%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 24px;
+  border-right: 2px solid #ddd;
+}
+
+.award-card:last-child {
+  border-right: none;
+}
+
+.award-img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+.award-card p {
+  text-align: left;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* STEP SLIDE */
+@keyframes awardsStep {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-166.666%);
+  }
+}
+
+.clients-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.clients-track {
+  display: flex;
+  animation: clientsStep 20s steps(7) infinite;
+}
+
+.client {
+  flex: 0 0 calc(100% / 7); /* ALWAYS 7 VISIBLE */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.client img {
+  height: 105px;        /* adjust if needed */
+  width: auto;
+  object-fit: contain;
+}
+
+/* STEP-BASED SLIDE (ONE LOGO AT A TIME) */
+@keyframes clientsStep {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.social-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.social-divider::before,
+.social-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccb7b7;
+}
+
+.social-divider::before {
+  margin-right: 15px;
+}
+
+.social-divider::after {
+  margin-left: 15px;
+}
+
+.social-divider span {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #d3c9c9;
+}
+
+.section-divider::before {
+  margin-right: 15px;
+}
+
+.section-divider::after {
+  margin-left: 15px;
+}
+
+.section-divider span {
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 600;   /* semi-bold */
+}
+
+/* Scrollable dropdown for "More" */
+.navbar .dropdown-menu {
+  max-height: 260px;        /* controls height */
+  overflow-y: auto;        /* vertical scrollbar */
+  min-width: 220px;        /* reduce dropdown width */
+  font-size: 14px;         /* slightly smaller text */
+}
+
+/* Optional: smooth scrollbar (Chrome/Edge) */
+/* Navbar must be sticky */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+}
+
+/* Default logo size */
+.navbar-logo {
+  height: 160px;
+  transition: height 0.3s ease;
+}
+
+/* Scroll-driven animation (NO JS) */
+@supports (animation-timeline: scroll()) {
+
+  .navbar-logo {
+    animation: logoShrink linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0 150px;
+  }
+
+  @keyframes logoShrink {
+    from {
+      height: 110px;
+    }
+    to {
+      height: 70px;
+    }
+  }
+}
+/* Remove default Bootstrap caret */
+.nav-link.dropdown-toggle::after {
+  display: none;
+}
+
+/* Add custom caret icon */
+.nav-link.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Default (DOWN arrow) */
+.nav-link.dropdown-toggle::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+}
+
+/* When dropdown is OPEN → UP arrow */
+.nav-link.dropdown-toggle[aria-expanded="true"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z'/%3E%3C/svg%3E");
+}
+            
+
 </style>
+
 </head>
 
 <body>
@@ -35,22 +273,152 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">RDL</a>
 
+    <!-- LOGO -->
+    <img src="images/qt=q_95.webp" class="navbar-logo" alt="RDL Logo">
+
+    <!-- TOGGLER -->
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- NAV LINKS -->
     <div class="collapse navbar-collapse" id="nav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link">IoT Products</a></li>
-        <li class="nav-item"><a class="nav-link">IoT Solutions</a></li>
-        <li class="nav-item"><a class="nav-link">More</a></li>
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item">
+          <a class="nav-link">Home</a>
+        </li>
+
+        <!-- IOT PRODUCTS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            IoT Products
+          </a>
+          <ul class="dropdown-menu">
+           <li>
+  <a class="dropdown-item" href="data-logger.html">
+    Data Logger IIoT 4.0
+  </a>
+</li>
+
+            <a class="dropdown-item" href="cloud.html">Cloud PLC 4.0</a>
+<a class="dropdown-item" href="biometric-authentication.html">
+  Biometric Authentication
+</a>
+
+
+           <li>
+  <a class="dropdown-item" href="hmi.html">HMI & Display Board</a>
+</li>
+
+            <li><a class="dropdown-item" href="rfid.html">RFID Reader</a></li>
+
+            <li><a class="dropdown-item" href="r.html">R-LiFi</a></li>
+            <li><a class="dropdown-item" href="v.html">Vibration Sensor</a></li>
+          </ul>
+        </li>
+
+        <!-- IOT SOLUTIONS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            IoT Solutions
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="mes.html">MES 4.0</a></li>
+            <li><a class="dropdown-item" href="oee.html">OEE Monitoring Solution</a></li>
+            <li><a class="dropdown-item" href="energy.html">Energy Monitoring System</a></li>
+           <li><a class="dropdown-item" href="cond.html">Condition Monitoring</a></li>
+<li><a class="dropdown-item" href="water.html">Water Balancing System</a></li>
+<li><a class="dropdown-item" href="coldd.html">Cold Storage Monitoring</a></li>
+<li><a class="dropdown-item" href="uti.html">Utility Monitoring System</a></li>
+<li><a class="dropdown-item" href="ground.html">Grounding &amp; ESD Safety</a></li>
+<li><a class="dropdown-item" href="andon.html">Andon System</a></li>
+<li><a class="dropdown-item" href="esd.html">ESD IntelliTrack</a></li>
+<li><a class="dropdown-item" href="ai.html">AI Based PPE Monitoring</a></li>
+
+          </ul>
+        </li>
+
+        <!-- MORE -->
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+    More
+  </a>
+
+  <ul class="dropdown-menu dropdown-menu-end">
+
+    <!-- SERVICES -->
+    <li>
+      <span class="dropdown-item ps-4 fw-semibold">Services</span>
+    </li>
+    <li><a class="dropdown-item ps-4" href="#">Technical Support</a></li>
+    <li><a class="dropdown-item ps-4" href="#">Consulting</a></li>
+    <li><a class="dropdown-item ps-4" href="#">Hardware Design</a></li>
+    <li><a class="dropdown-item ps-4" href="#">Software Design</a></li>
+
+    <li><hr class="dropdown-divider"></li>
+
+    <!-- CASE STUDIES -->
+    <li>
+      <span class="dropdown-item ps-4 fw-semibold">Case Studies</span>
+    </li>
+    <li><a class="dropdown-item ps-4" href="#">Shop Floor Digitization</a></li>
+    <li><a class="dropdown-item ps-4" href="#">Asset Condition Monitor</a></li>
+    <li><a class="dropdown-item ps-4" href="#">Asset Management & Audit</a></li>
+    <li><a class="dropdown-item ps-4" href="#">Energy & Utility Management</a></li>
+
+    <li><hr class="dropdown-divider"></li>
+
+    <!-- OTHER LINKS -->
+    <li><a class="dropdown-item" href="#">Shop</a></li>
+    <li><a class="dropdown-item" href="#">About Us</a></li>
+    <li><a class="dropdown-item" href="#">Contact Us</a></li>
+    <li><a class="dropdown-item" href="#">Indino 4.0</a></li>
+    <li><a class="dropdown-item" href="#">News</a></li>
+    <li><a class="dropdown-item" href="#">Become a Partner</a></li>
+
+  </ul>
+</li>
+
+
+        <!-- SEARCH ICON -->
+       <li class="nav-item ms-lg-3">
+  <button class="btn nav-link"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSearch"
+          aria-expanded="false">
+    <i class="bi bi-search"></i>
+  </button>
+</li>
+
+
+        <!-- CART ICON -->
+        <li class="nav-item">
+  <button class="btn nav-link"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#cartModal">
+    <i class="bi bi-cart"></i>
+  </button>
+</li>
+
+
       </ul>
     </div>
   </div>
 </nav>
+
+<!-- SEARCH BAR -->
+<div class="collapse bg-white shadow-sm" id="navbarSearch">
+  <div class="container py-3">
+    <input type="text" class="form-control" placeholder="Search products...">
+  </div>
+</div>
+
+
+
 <section class="py-5 text-center">
   <div class="container">
 
