@@ -8,11 +8,274 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-body{padding-top:80px;font-family:Arial;color:#555}
-.section-title{font-weight:600;color:#333}
-.text-grey{color:#666;font-size:0.95rem}
-.form-control{border-radius:0}
-.navbar-nav .nav-link{font-weight:600}
+body{padding-top:70px;font-family:Arial}
+.card img{height:200px;object-fit:cover}
+.stats h3{color:#0a2540;font-weight:bold}
+footer{background:#d3cece;color:#fff;padding:20px}
+
+/* Custom white → black button */
+.btn-outline-black {
+  background-color: #fff;
+  color: #000;
+  border: 1.5px solid #000;
+  padding: 8px 22px;              /* makes it oval, not short */
+  border-radius: 50px;            /* bent rectangle / oval */
+  display: inline-flex;
+  align-items: center;            /* vertical center */
+  justify-content: center;        /* horizontal center */
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-black:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.sustain-img {
+  height: 250px;        /* smaller size */
+  width: auto;
+  object-fit: contain;
+}
+/* Remove border from Solutions cards */
+.card {
+  border: none;
+}
+
+.awards-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.awards-track {
+  display: flex;
+  animation: awardsStep 18s steps(5) infinite;
+}
+
+.award-card {
+  flex: 0 0 33.333%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 24px;
+  border-right: 2px solid #ddd;
+}
+
+.award-card:last-child {
+  border-right: none;
+}
+
+.award-img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+.award-card p {
+  text-align: left;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* STEP SLIDE */
+@keyframes awardsStep {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-166.666%);
+  }
+}
+
+.clients-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.clients-track {
+  display: flex;
+  animation: clientsStep 20s steps(7) infinite;
+}
+
+.client {
+  flex: 0 0 calc(100% / 7); /* ALWAYS 7 VISIBLE */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.client img {
+  height: 105px;        /* adjust if needed */
+  width: auto;
+  object-fit: contain;
+}
+
+/* STEP-BASED SLIDE (ONE LOGO AT A TIME) */
+@keyframes clientsStep {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.social-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.social-divider::before,
+.social-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccb7b7;
+}
+
+.social-divider::before {
+  margin-right: 15px;
+}
+
+.social-divider::after {
+  margin-left: 15px;
+}
+
+.social-divider span {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #d3c9c9;
+}
+
+.section-divider::before {
+  margin-right: 15px;
+}
+
+.section-divider::after {
+  margin-left: 15px;
+}
+
+.section-divider span {
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 600;   /* semi-bold */
+}
+
+/* Scrollable dropdown for "More" */
+.navbar .dropdown-menu {
+  max-height: 260px;        /* controls height */
+  overflow-y: auto;        /* vertical scrollbar */
+  min-width: 220px;        /* reduce dropdown width */
+  font-size: 14px;         /* slightly smaller text */
+}
+
+/* Optional: smooth scrollbar (Chrome/Edge) */
+/* Navbar must be sticky */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+}
+
+/* Default logo size */
+.navbar-logo {
+  height: 160px;
+  transition: height 0.3s ease;
+}
+
+/* Scroll-driven animation (NO JS) */
+@supports (animation-timeline: scroll()) {
+
+  .navbar-logo {
+    animation: logoShrink linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0 150px;
+  }
+
+  @keyframes logoShrink {
+    from {
+      height: 110px;
+    }
+    to {
+      height: 70px;
+    }
+  }
+}
+/* Remove default Bootstrap caret */
+.nav-link.dropdown-toggle::after {
+  display: none;
+}
+
+/* Add custom caret icon */
+.nav-link.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Default (DOWN arrow) */
+.nav-link.dropdown-toggle::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+}
+
+/* When dropdown is OPEN → UP arrow */
+.nav-link.dropdown-toggle[aria-expanded="true"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z'/%3E%3C/svg%3E");
+}
+  
+/* ================= WHATSAPP BUTTON ================= */
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 42px;
+  background-color: #4f6368; /* matches screenshot */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #3f5458;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* WhatsApp icon */
+.whatsapp-icon {
+  width: 18px;
+  height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+}       
 </style>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
